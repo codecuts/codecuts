@@ -1,1 +1,11 @@
-<%- @content %>
+<% if @document.gap: %>
+<div class="gap">
+	<div>
+		<h2 class="title lighttext"><%= @document.title %></h2>
+		<h3 class="subtitle lighttext"><%= @document.subtitle %></h3>
+	</div>
+</div>
+<% end %>
+<div class="section-content">
+	<%- @content %>
+</div>

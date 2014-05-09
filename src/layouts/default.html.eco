@@ -7,22 +7,31 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<%- @getBlock("meta").toHTML() %>
-    <%- @getBlock("styles").toHTML() %>
+    <%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 </head>
 <body>
-	<section class="intro">
-		<div ng-include src="'partials/intro.html'"></div>
-	</section>
-	<section class="work">
-		<div ng-include src="'partials/work.html'"></div>
-	</section>
-	<section class="about">
-		<div ng-include src="'partials/about.html'"></div>
-	</section>
-	<section class="contact">
-		<div ng-include src="'partials/contact.html'"></div>
-	</section>
+	<div class="content">
+		<header class="section intro">
+			<div class="branding">			
+				<img class="logo" src="images/logo.png"></img>
+				<h1>CODECUTS</h1>
+			</div>
+		</header>
+		<section class="section hello">
+			<div ng-include src="'partials/hello.html'"></div>
+		</section>
+		<section class="section work">
+			<div ng-include src="'partials/work.html'"></div>
+		</section>
+		<section class="section about">
+			<div ng-include src="'partials/about.html'"></div>
+		</section>
+		<section class="section contact">
+			<div ng-include src="'partials/contact.html'"></div>
+		</section>
+	</div>
 	<%- @getBlock("scripts").toHTML() %>
 </body>
 </html>
