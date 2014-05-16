@@ -3,6 +3,8 @@ title: About
 subtitle: Why we do what we do
 layout: partial
 gap: true
+menuItem: true
+menuOrder: 3
 ---
 
 ### Lorem Ipsum Dolor

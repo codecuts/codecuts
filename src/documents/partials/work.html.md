@@ -3,6 +3,8 @@ title: Work
 subtitle: bespoke senseless solutions
 layout: partial
 gap: true
+menuItem: true
+menuOrder: 2
 ---
 <div class="project tile">
 	<img src="http://placebeard.it/700/700/"/>

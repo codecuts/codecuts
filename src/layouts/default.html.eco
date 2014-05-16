@@ -9,12 +9,28 @@
 	<%- @getBlock("meta").toHTML() %>
     <%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>-->
+    <script src="/vendor/angular.min.js"></script>
+    <script src="/vendor/mootools-core.js"></script>
 </head>
 <body>
-	<div class="content">
+	<div id="content">
+		<div id="menu-toggle">
+			<img src="images/menu_icon.png"/>
+		</div>
+		<nav role="navigation" class="menu">
+			<ul>
+				<% for page in @getCollection('html').findAllLive({menuItem:true},[{menuOrder:1}]).toJSON(): %>
+				<li>
+					<a href="<%= page.url %>">
+					  <%= page.title %>
+					</a>
+				</li>
+				<% end %>
+			</ul>
+		</nav>
 		<header class="section intro">
-			<div class="branding">			
+			<div class="branding">`
 				<img class="logo" src="images/logo.png"></img>
 				<h1>CODECUTS</h1>
 			</div>
@@ -32,6 +48,6 @@
 			<div ng-include src="'partials/contact.html'"></div>
 		</section>
 	</div>
-	<%- @getBlock("scripts").toHTML() %>
+	<%- @getBlock("scripts").add(["/scripts/script.js"]).toHTML() %>
 </body>
 </html>

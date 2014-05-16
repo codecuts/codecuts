@@ -10,6 +10,11 @@ $smalldevice-min: 768px;
 $mediumdevice-min: 992px;
 $largedevice-min: 1200px;
 
+/* levels */
+$bottom: 10;
+$top: 100;
+$aboveItAll: 1000;
+
 * {
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -21,12 +26,18 @@ html {
 	font-family: 'Ubuntu', sans-serif;
 }
 
-.content {
+#content {
 	width: 100%;
 	font-size: $basefontsize;
 	@media (min-width: $smalldevice-min) { }
 	@media (min-width: $mediumdevice-min) {  }
 	@media (min-width: $largedevice-min) {  }
+}
+
+a {
+	font-weight: 700;
+	color: $darkfontcolor;
+	text-decoration: none;
 }
 
 .lighttext {
@@ -35,6 +46,47 @@ html {
 
 .darktext {
 	color: $darkfontcolor;
+}
+
+.hidden {
+	position: absolute !important;
+	left: -9999px !important;
+}
+
+.menu {
+	position: relative;
+	left: -9999px;
+	width: 100%;
+	margin: 0;
+
+	 -moz-box-shadow:    0 6px 5px 3px #ccc;
+	 -webkit-box-shadow: 0 6px 5px 3px #ccc;
+	 box-shadow:         0 6px 5px 3px #ccc;
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0;
+		list-style: none;
+	}
+
+	a {
+		display: flex;
+		padding: 1.5rem;
+	}
+}
+
+#menu-toggle {
+	position: fixed;
+	top: 1em;
+	left: 1em;
+	z-index: $aboveItAll;
+
+	img {
+		position: absolute;
+		top: 0; left: 0;
+	}
 }
 
 .section {
@@ -118,7 +170,7 @@ html {
 		.logo {
 			width: 40%;
 		}
-		
+
 		.section-content {
 			background: #fff;
 		}
