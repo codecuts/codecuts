@@ -1,0 +1,3 @@
+<div class="project tile">
+	<img src="<%= @document.image %>" />
+</div>
