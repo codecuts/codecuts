@@ -38,17 +38,6 @@ var page = new function() {
 
 	};
 
-	/*this.menuToggle = function() {
-		console.log(this.pageState);
-		var e = $('content').getElement('.menu');
-		pageState.menuVisible = !pageState.menuVisible;
-		if ( pageState.menuVisible == true ) {
-			e.setStyles({left:0});
-		} else {
-			e.setStyles({left:'-9999px'});
-		}
-	}*/
-
 	this.preloader = function(images) {
 		var img, preload = [];
 		if ( document.images ) {

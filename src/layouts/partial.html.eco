@@ -6,6 +6,30 @@
 	</div>
 </div>
 <% end %>
+<% if @document.title == 'Work': %>
+	<% i = 0 %>
+	<% row = 1 %>
+	<% for project in @getCollection('html').findAllLive({isProject:true},[{order:1}]).toJSON(): %>
+		<% if (i % 3 == 0): %>
+			<div class="row">
+		<% end %>
+			<% if ( (i % 3 == 1  && row % 2) || (i % 3 == 0 && !(row % 2)) ): %>
+			<div class="stack">
+			<% end %>
+				<div class="project tile">
+					<img src="<%= project.image %>"/>
+				</div>
+			<% if ( (i % 3 == 2 && row % 2 ) || (i % 3 == 1 && !(row % 2)) ): %>
+			</div>
+			<% end %>
+		<% if (i % 3 == 2): %>
+			</div>
+			<% row = row + 1 %>
+		<% end %>
+		<% i = i + 1 %>
+	<% end %>
+<% else: %>
 <div class="section-content">
 	<%- @content %>
 </div>
+<% end %>

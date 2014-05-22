@@ -1,4 +1,5 @@
 @import 'normalize';
+@import 'flex';
 
 /* fonts */
 $basefontsize: 1.6em;
@@ -15,6 +16,19 @@ $bottom: 10;
 $top: 100;
 $aboveItAll: 1000;
 
+.lighttext {
+	color: $lightfontcolor;
+}
+
+.darktext {
+	color: $darkfontcolor;
+}
+
+.hidden {
+	position: absolute !important;
+	left: -9999px !important;
+}
+
 * {
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -29,6 +43,8 @@ html {
 #content {
 	width: 100%;
 	font-size: $basefontsize;
+	background: #ef3c2e;
+
 	@media (min-width: $smalldevice-min) { }
 	@media (min-width: $mediumdevice-min) {  }
 	@media (min-width: $largedevice-min) {  }
@@ -38,19 +54,6 @@ a {
 	font-weight: 700;
 	color: $darkfontcolor;
 	text-decoration: none;
-}
-
-.lighttext {
-	color: $lightfontcolor;
-}
-
-.darktext {
-	color: $darkfontcolor;
-}
-
-.hidden {
-	position: absolute !important;
-	left: -9999px !important;
 }
 
 .menu {
@@ -87,7 +90,7 @@ a {
 
 	img {
 		position: absolute;
-		top: 0; left: 0;
+		top: -2px; left: 0;
 	}
 }
 
@@ -97,7 +100,6 @@ a {
 	.gap {
 		display: block;
 		height: 45rem;
-		background: #ef3c2e;
 		text-align: center;
 
 		&:before {
@@ -110,16 +112,6 @@ a {
 		div {
 			display: inline-block;
 			vertical-align: middle;
-		}
-	}
-
-	.tile {
-		display: block;
-		width: 100%;
-		height: 35rem;
-
-		img {
-			width: 100%;
 		}
 	}
 
@@ -140,12 +132,18 @@ a {
 
 		p {
 			@extend .darktext;
-			font-size: 3.4rem;
+			font-size: 2.8rem;
+			font-weight: 300;
 		}
 
 		h1, h2, h3 {
 			@extend .darktext;
-			font-size: 4rem;
+			font-size: 3.4rem;
+			font-weight: 500;
+		}
+
+		a {
+			@extend .darktext;
 			font-weight: 500;
 		}
 	}
@@ -166,21 +164,101 @@ a {
 		.branding {
 			display: inline-block;
 			vertical-align: middle;
-			margin-top: -15%;
 		}
 
 		.logo {
 			width: 40%;
 		}
 
+		.site-title {
+			margin: 0;
+			font-weight:300;
+			letter-spacing: 2.2px;
+			text-decoration: underline;
+		}
+
 		.section-content {
 			background: #fff;
+		}
+
+		@media (min-width: $smalldevice-min) {
+
+			.logo {
+				width: 50%;
+			}
 		}
 
 	}
 
 	.section.work {
+
 		.section-content {
 			padding: 0;
+		}
+
+		.tile {
+			display: block;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.row {
+			@include flexbox;
+			@include flex-direction(column);
+			@include align-items(stretch);
+			height: 150vw;
+
+			> .tile {
+				@include flex(2);
+			}
+
+			> .stack {
+				@include flex(1);
+			}
+		}
+
+		.stack {
+			@include flexbox;
+			@include flex-direction(row);
+		}
+
+		@media (min-width: $smalldevice-min) {
+
+			.row {
+				@include flex-direction(row);
+				height: 66.6666vw;
+			}
+
+			.stack {
+				@include flex-direction(column);
+
+				.tile {
+					height: auto;
+				}
+			}
+
+		}
+
+	}
+
+	.section.contact {
+
+		.email a {
+			font-size: 3rem;
+		}
+	}
+
+	.section.footer {
+		height: 6rem;
+
+		.impressum {
+			float: right;
+			height: 100%;
+			padding: 1.1em;
+			font-size: 1.2em;
+			font-weight: 300;
 		}
 	}

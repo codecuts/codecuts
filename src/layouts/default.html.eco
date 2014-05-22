@@ -30,9 +30,9 @@
 			</ul>
 		</nav>
 		<header class="section intro">
-			<div class="branding">`
+			<div class="branding">
 				<img class="logo" src="images/logo.png"></img>
-				<h1>CODECUTS</h1>
+				<h1 class="site-title">CODECUTS</h1>
 			</div>
 		</header>
 		<section class="section hello">
@@ -47,6 +47,9 @@
 		<section class="section contact">
 			<div ng-include src="'partials/contact.html'"></div>
 		</section>
+		<footer class="section footer">
+			<a class="impressum">impressum</a>
+		</footer>
 	</div>
 	<%- @getBlock("scripts").add(["/scripts/script.js"]).toHTML() %>
 </body>

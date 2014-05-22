@@ -6,18 +6,3 @@ gap: true
 menuItem: true
 menuOrder: 2
 ---
-<div class="project tile">
-	<img src="http://placebeard.it/700/700/"/>
-</div>
-<div class="project tile">
-	<img src="http://placebeard.it/350/350/"/>
-</div>
-<div class="project tile">
-	<img src="http://placebeard.it/350/350/"/>
-</div>
-<div class="project tile">
-	<img src="http://placebeard.it/350/350/"/>
-</div>
-<div class="project tile">
-	<img src="http://placebeard.it/350/350/"/>
-</div>
