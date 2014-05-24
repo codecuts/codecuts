@@ -12,6 +12,7 @@
     <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>-->
     <script src="/vendor/angular.min.js"></script>
     <script src="/vendor/mootools-core.js"></script>
+    <script src="/vendor/mootools-more.js"></script>
 </head>
 <body>
 	<div id="content">
@@ -22,7 +23,7 @@
 			<ul>
 				<% for page in @getCollection('html').findAllLive({menuItem:true},[{menuOrder:1}]).toJSON(): %>
 				<li>
-					<a href="<%= page.url %>">
+					<a class="menu-item" title="<%= page.title %>" href="#<%= page.title.toLowerCase() %>" name="#<%= page.title.toLowerCase() %>">
 					  <%= page.title %>
 					</a>
 				</li>
@@ -38,13 +39,13 @@
 		<section class="section hello">
 			<div ng-include src="'partials/hello.html'"></div>
 		</section>
-		<section class="section work">
+		<section id="work" class="section work">
 			<div ng-include src="'partials/work.html'"></div>
 		</section>
-		<section class="section about">
+		<section id="about" class="section about">
 			<div ng-include src="'partials/about.html'"></div>
 		</section>
-		<section class="section contact">
+		<section id="contact" class="section contact">
 			<div ng-include src="'partials/contact.html'"></div>
 		</section>
 		<footer class="section footer">

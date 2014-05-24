@@ -153,6 +153,7 @@ a {
 	.section.intro {
 		height: 100vh;
 		text-align: center;
+		background: #fff;
 
 		&:before {
 			content: '';
@@ -168,6 +169,7 @@ a {
 
 		.logo {
 			width: 40%;
+			margin-bottom: 1em;
 		}
 
 		.site-title {
@@ -249,6 +251,7 @@ a {
 		.email a {
 			font-size: 3rem;
 		}
+
 	}
 
 	.section.footer {

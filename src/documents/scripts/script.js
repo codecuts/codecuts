@@ -20,6 +20,10 @@ var page = new function() {
 
 	this.setupEvents = function() {
 		var pageState = this.pageState;
+		
+		window.addEvent('domready', function() {
+			new Fx.SmoothScroll({duration: 500});
+		});
 
 		$('menu-toggle').addEvent('click', menuToggle);
 
