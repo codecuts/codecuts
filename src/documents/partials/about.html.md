@@ -7,6 +7,18 @@ menuItem: true
 menuOrder: 3
 ---
 
-### Lorem Ipsum Dolor
+We utilize state-of-the-art technologies to solve problems efficiently and intelligently to deliver optimized products for our clients, and their users. Together we bring broad range of experience and expertise to every project. Everything from initial conceptual frame-working to final testing is done collaboratively and in-house. We solve problems and generate results.
 
-**CodeCuts** is a creative digital collective specializing in working with clients in Europe and North America to create well designed websites and web applications. Clients hire us because we have the experience and skill to help them translate their goals into ideal solutions using the lastest state-of-the-art technologies such as Node, Angular, Javascript, Wordpress and Ruby.
+Our technical abilities include professional knowledge of best practices for design and development.
+
+Visual-
+UI/UX design, logo and branding, photography, illustration, motion graphics and video editing
+
+Code-
+PHP, jQuery, Kirby, HTML5 / CSS / SASS, custom wordpress, C, Objective-C, standalone Apps for iPhone / iPad (IOS?)
+
+Proud to have worked with: 
+
+Lanningsmith / OKGO / Lavender Diamond / Paracadute / Hidden Recordings / Autre Ne Veut / YPS* / DZ Bank* / HEAD Tennis* / Aklamio / Aimaq von Lobenstein* / WWF* / SPD* / Essence* / SANDEMANs New Europe / ERGO* / ERGO Direkt* / Crumpler / Lorem Ipsum / Yadda Yadda
+
+* under contract with another agency

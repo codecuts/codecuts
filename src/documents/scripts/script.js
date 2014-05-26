@@ -20,12 +20,11 @@ var page = new function() {
 
 	this.setupEvents = function() {
 		var pageState = this.pageState;
-		
-		window.addEvent('domready', function() {
-			new Fx.SmoothScroll({duration: 500});
-		});
+
+		var scroll = new Fx.SmoothScroll({duration: 500});
 
 		$('menu-toggle').addEvent('click', menuToggle);
+		$$('.menu-item').addEvent('click', menuClick);
 
 		function menuToggle() {
 			var e = $('content').getElement('.menu'),
@@ -38,6 +37,12 @@ var page = new function() {
 				e.setStyles({left:'-9999px'});
 				t.setProperty('src','images/menu_icon.png');
 			}
+		}
+
+		function menuClick(e) {
+			new Event(e).stop();
+			scroll.start();
+			menuToggle();
 		}
 
 	};

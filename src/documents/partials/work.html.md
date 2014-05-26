@@ -1,6 +1,6 @@
 ---
 title: Work
-subtitle: bespoke senseless solutions
+subtitle: tailored solutions & custom design
 layout: partial
 gap: true
 menuItem: true
