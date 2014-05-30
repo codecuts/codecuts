@@ -1,7 +1,3 @@
-window.addEvent('domready', function() {
-    page.load();
-});
-
 var page = new function() {
 
 	this.pageState = {
@@ -15,22 +11,17 @@ var page = new function() {
 
 	this.load = function() {
 		this.setupEvents();
-		this.addLoadEvent(this.preloader(this.images));
 	};
 
 	this.setupEvents = function() {
 		var pageState = this.pageState;
 
-		var scroll = new Fx.SmoothScroll({duration: 500});
-
-		$('menu-toggle').addEvent('click', menuToggle);
-		$$('.menu-item').addEvent('click', menuClick);
-
+		// callback functions
 		function menuToggle() {
 			var e = $('content').getElement('.menu'),
-			    t = $('menu-toggle').getElement('img');
+				t = $('menu-toggle').getElement('img');
 			pageState.menuVisible = !pageState.menuVisible;
-			if ( pageState.menuVisible == true ) {
+			if ( pageState.menuVisible === true ) {
 				e.setStyles({left:0});
 				t.setProperty('src','images/menu_close.png');
 			} else {
@@ -45,6 +36,12 @@ var page = new function() {
 			menuToggle();
 		}
 
+		// event assignment
+		this.addLoadEvent(this.preloader(this.images));
+		new Fx.SmoothScroll({duration: 500});
+		$('menu-toggle').addEvent('click', menuToggle);
+		$$('.menu-item').addEvent('click', menuClick);
+
 	};
 
 	this.preloader = function(images) {
@@ -57,11 +54,11 @@ var page = new function() {
 
 			}
 		}
-	}
+	};
 
 	this.addLoadEvent = function(func) {
 		var oldonload = window.onload;
-		if (typeof window.onload != 'function') {
+		if (typeof window.onload !== 'function') {
 			window.onload = func;
 		} else {
 			window.onload = function() {
@@ -69,8 +66,12 @@ var page = new function() {
 					oldonload();
 				}
 				func();
-			}
+			};
 		}
-	}
+	};
 
-}
+}();
+
+window.addEvent('domready', function() {
+    page.load();
+});

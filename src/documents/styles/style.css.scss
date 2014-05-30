@@ -43,7 +43,7 @@ html {
 #content {
 	width: 100%;
 	font-size: $basefontsize;
-	background: #ef3c2e;
+	background: url('/images/background.png') repeat;
 
 	@media (min-width: $smalldevice-min) { }
 	@media (min-width: $mediumdevice-min) {  }
