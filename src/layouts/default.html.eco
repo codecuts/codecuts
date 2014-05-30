@@ -52,6 +52,6 @@
 			<a class="impressum">impressum</a>
 		</footer>
 	</div>
-	<%- @getBlock("scripts").add(["/scripts/script.js"]).toHTML() %>
+	<%- @getBlock("scripts").add(["/scripts/all.js"]).toHTML() %>
 </body>
 </html>
