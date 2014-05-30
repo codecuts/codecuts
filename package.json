@@ -11,16 +11,15 @@
     "docpad-plugin-eco": "~2.0.3",
     "docpad-plugin-sass": "~2.7.2",
     "docpad-plugin-livereload": "~2.6.0",
-    "docpad-plugin-markdown": "~2.0.3"
+    "docpad-plugin-markdown": "~2.0.3",
+    "docpad-plugin-grunt": "~2.1.1"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
     "start": "node_modules/docpad/bin/docpad-server"
   },
   "devDependencies": {
-    "gulp": "^3.6.2",
-    "gulp-jshint": "^1.6.1",
-    "gulp-sftp": "0.0.7",
-    "jshint-stylish": "^0.2.0"
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.4.0"
   }
 }
