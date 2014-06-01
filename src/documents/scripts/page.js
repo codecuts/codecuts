@@ -8,6 +8,9 @@ module.exports = (function () {
         // Singleton
 
         // Private variables and functions.
+        require('browsernizr/test/css/vhunit');
+        require('browsernizr/test/css/flexbox');
+        var Modernizr = require('browsernizr');
 
         var pageState = {
             menuVisible: false
@@ -17,6 +20,49 @@ module.exports = (function () {
             'images/menu_icon.png',
             'images/menu_close.png'
         ];
+
+        function attach() {
+
+            // callback functions
+            function menuToggle() {
+                var e = $('content').getElement('.menu'),
+                    t = $('menu-toggle').getElement('img');
+                pageState.menuVisible = !pageState.menuVisible;
+                if ( pageState.menuVisible === true ) {
+                    e.setStyles({left:0});
+                    t.setProperty('src','images/menu_close.png');
+                } else {
+                    e.setStyles({left:'-9999px'});
+                    t.setProperty('src','images/menu_icon.png');
+                }
+            }
+
+            function menuClick(e) {
+                new Event(e).stop();
+                menuToggle();
+            }
+
+            // activate smooth scrolling on menu anchor click
+            new Fx.SmoothScroll({duration: 750});
+
+            // event assignment
+            addLoadEvent(preloader(images));
+            $('menu-toggle').addEvent('click', menuToggle);
+            $$('.menu-item').addEvent('click', menuClick);
+
+        }
+
+        function fallbacks() {
+            var tests = $$('html').pick().getProperty('class').split(' ');
+
+            if ( tests.contains('no-cssvhunit') ) {
+                var el = $('content').getElement('.intro');
+                el.setStyles({
+                    height: window.getSize().y,
+                    width: window.getSize().x
+                });
+            }
+        }
 
         function preloader(images) {
             var img, preload = [];
@@ -49,40 +95,9 @@ module.exports = (function () {
             // Public variables and functions
 
             load: function () {
-                this.setupEvents();
-            },
-
-            setupEvents: function () {
-
-                // callback functions
-                function menuToggle() {
-                    var e = $('content').getElement('.menu'),
-                        t = $('menu-toggle').getElement('img');
-                    pageState.menuVisible = !pageState.menuVisible;
-                    if ( pageState.menuVisible === true ) {
-                        e.setStyles({left:0});
-                        t.setProperty('src','images/menu_close.png');
-                    } else {
-                        e.setStyles({left:'-9999px'});
-                        t.setProperty('src','images/menu_icon.png');
-                    }
-                }
-
-                function menuClick(e) {
-                    new Event(e).stop();
-                    menuToggle();
-                }
-
-                // activate smooth scrolling on menu anchor click
-                new Fx.SmoothScroll({duration: 750});
-
-                // event assignment
-                addLoadEvent(preloader(images));
-                $('menu-toggle').addEvent('click', menuToggle);
-                $$('.menu-item').addEvent('click', menuClick);
-
+                fallbacks();
+                attach();
             }
-
         };
 
     }

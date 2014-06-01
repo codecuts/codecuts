@@ -246,6 +246,30 @@ a {
 
 	}
 
+	.no-flexbox .section.work {
+
+		.row {
+			display:block;
+			width: 100%;
+			overflow:hidden;
+
+			> .tile {
+				width: 100%;
+			}
+
+			> .stack {
+				width: 100%;
+				overflow: hidden;
+
+				.tile {
+					//float: left;
+					width: 50%;
+				}
+			}
+		}
+
+	}
+
 	.section.contact {
 
 		.email a {
