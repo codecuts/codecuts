@@ -74,7 +74,7 @@ module.exports = (function () {
                 }
 
                 // activate smooth scrolling on menu anchor click
-                new Fx.SmoothScroll({duration: 500});
+                new Fx.SmoothScroll({duration: 750});
 
                 // event assignment
                 addLoadEvent(preloader(images));
