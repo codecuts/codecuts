@@ -54,8 +54,8 @@ module.exports = new Class({
 			els.each(function(e) {
 				newPosY = (scroll.y - e.getCoordinates().top) * that.options.factor;
 				newPosX = (scroll.x - e.getCoordinates().left) * that.options.factor;
-				e.setStyle('background-position-y', newPosY+'px');
-				e.setStyle('background-position-x', newPosX+'px');
+				e.setStyle('background-position', newPosX+'px '+newPosY+'px');
+				console.log(e.getStyle('background-position'));
 			});
 		}
 	}
