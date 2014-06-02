@@ -13,6 +13,7 @@ window.addEvent('load', function () {
     'use strict';
 
     var parallax = new Parallax({
-        parallaxedClass: 'gap'
+        parallaxedClass: 'gap',
+        factor: 0.2
     });
 });
