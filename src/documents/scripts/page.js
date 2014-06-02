@@ -9,6 +9,7 @@ module.exports = (function () {
 
         // Private variables and functions.
         require('browsernizr/test/css/vhunit');
+        require('browsernizr/test/css/vwunit');
         require('browsernizr/test/css/flexbox');
         var Modernizr = require('browsernizr');
 
@@ -61,6 +62,10 @@ module.exports = (function () {
                     height: window.getSize().y,
                     width: window.getSize().x
                 });
+            }
+
+            if ( tests.contains('no-cssvwunit') ) {
+                alert($$('html').pick().getProperty('class'));
             }
         }
 

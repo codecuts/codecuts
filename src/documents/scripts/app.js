@@ -14,6 +14,6 @@ window.addEvent('load', function () {
 
     var parallax = new Parallax({
         parallaxedClass: 'gap',
-        factor: 0.2
+        factor: 0.5
     });
 });
