@@ -9,7 +9,6 @@
 	<%- @getBlock("meta").toHTML() %>
     <%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>-->
     <script src="/vendor/angular.min.js"></script>
     <script src="/vendor/mootools-core.js"></script>
     <script src="/vendor/mootools-more.js"></script>
