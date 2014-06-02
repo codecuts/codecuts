@@ -15,8 +15,12 @@ module.exports = new Class({
 	initialize: function(options) {
 		this.setOptions(options); 
 		this.container = document.id(this.options.container);
-		this.elements = $$('.'+this.options.parallaxedClass);
+		this.setupElements();
 		this.attach();
+	},
+
+	setupElements: function() {
+		this.elements = $$('.'+this.options.parallaxedClass);
 	},
 
 	getVisibleElements: function() {

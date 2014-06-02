@@ -1,6 +1,6 @@
 ---
 title: Test Project 3
-image: 'http://placebeard.it/700/700'
+image: '/images/projects/03.jpg'
 isProject: true
 order: 3
 layout: project
