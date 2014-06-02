@@ -105,18 +105,7 @@ a {
 		height: 0;
 		padding-bottom: 56.25%;
 		text-align: center;
-
-		&:before {
-			content: '';
-			display: inline-block;
-			height: 100%;
-			vertical-align: middle;
-		}
-
-		div {
-			display: inline-block;
-			vertical-align: middle;
-		}
+		overflow:hidden;
 	}
 
 	.title {
@@ -238,6 +227,7 @@ a {
 			> .stack {
 				@include flex(1);
 			}
+
 		}
 
 		.stack {
@@ -268,12 +258,16 @@ a {
 				width: 1080px;
 				height: 2/3*1080px;
 				margin: 0 auto;
-
-				&:first-of-type {
-					padding-top: 6rem;
-				}
-
 			}
+
+			.row:nth-of-type(2) {
+				padding-top: 6rem;
+			}
+
+			.row:last-of-type {
+				padding-bottom: 6rem;
+			}
+
 		}
 
 	}
@@ -294,7 +288,6 @@ a {
 				overflow: hidden;
 
 				.tile {
-					//float: left;
 					width: 50%;
 				}
 			}
