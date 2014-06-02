@@ -34,9 +34,8 @@ module.exports = new Class({
 	 	viewport.right = viewport.right + scroll.x;
 
 		this.elements.each(function(e) {
-			var elBounds = e.getCoordinates();
-			if ( (elBounds.top >= viewport.top && elBounds.top <= viewport.bottom) ||
-				 (elBounds.bottom <= viewport.bottom && elBounds.bottom >= viewport.top) ) {
+			// isVisible custom function defined in moohelpers.js
+			if ( e.isVisible(true) ) {
 				visible.push(e);
 			}
 		});
@@ -59,7 +58,6 @@ module.exports = new Class({
 				newPosY = (scroll.y - e.getCoordinates().top) * that.options.factor;
 				newPosX = (scroll.x - e.getCoordinates().left) * that.options.factor;
 				e.setStyle('background-position', newPosX+'px '+newPosY+'px');
-				console.log(e.getStyle('background-position'));
 			});
 		}
 	}
