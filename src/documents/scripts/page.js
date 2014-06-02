@@ -13,6 +13,8 @@ module.exports = (function () {
         require('browsernizr/test/css/flexbox');
         var Modernizr = require('browsernizr');
 
+        require('./moohelpers.js');
+
         var pageState = {
             menuVisible: false
         };
@@ -21,6 +23,16 @@ module.exports = (function () {
             'images/menu_icon.png',
             'images/menu_close.png'
         ];
+
+        function layout() {
+
+            window.addEvent('load', function() {
+
+                $$('.section-label').vAlign();
+
+            });
+
+        }
 
         function attach() {
 
@@ -100,6 +112,7 @@ module.exports = (function () {
             // Public variables and functions
 
             load: function () {
+                layout();
                 fallbacks();
                 attach();
             }
