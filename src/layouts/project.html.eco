@@ -1,3 +1,11 @@
-<div class="project tile">
-	<img src="<%= @document.image %>" />
-</div>
+<section class="project-images">
+	<img>
+</section>
+<section class="project-info">
+	<header>
+		<h1 class="project-title"><%= @document.title %></h1>
+	</headers>
+	<div class="project-description">
+		<%= @document.content %>
+	</div>
+</section>

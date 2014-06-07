@@ -24,19 +24,30 @@ module.exports = (function () {
             'images/menu_close.png'
         ];
 
-        function layout() {
+        function setupLayout() {
+
+            $('content').setStyles({overflow: 'hidden', height: window.getSize().y});
 
             window.addEvent('load', function() {
 
-                $$('.section-label').vAlign();
+                $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
+                $('content').setStyle('height','');
 
             });
 
         }
 
+        function updateLayout() {
+            console.log('update layout');
+            $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
+        }
+
         function attach() {
 
-            // callback functions
+             // activate smooth scrolling on menu anchor click
+            new Fx.SmoothScroll({duration: 750});
+
+            // event callbacks
             function menuToggle() {
                 var e = $('content').getElement('.menu'),
                     t = $('menu-toggle').getElement('img');
@@ -55,11 +66,13 @@ module.exports = (function () {
                 menuToggle();
             }
 
-            // activate smooth scrolling on menu anchor click
-            new Fx.SmoothScroll({duration: 750});
+            function updateLayout() {
+                $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
+            }
 
             // event assignment
-            addLoadEvent(preloader(images));
+            window.addEvent('load', preloader(images));
+            window.addEvent('resize', updateLayout.debounce(250));
             $('menu-toggle').addEvent('click', menuToggle);
             $$('.menu-item').addEvent('click', menuClick);
 
@@ -93,29 +106,15 @@ module.exports = (function () {
             }
         }
 
-        function addLoadEvent(func) {
-            var oldonload = window.onload;
-            if (typeof window.onload !== 'function') {
-                window.onload = func;
-            } else {
-                window.onload = function () {
-                    if (oldonload) {
-                        oldonload();
-                    }
-                    func();
-                };
-            }
-        }
-
         return {
 
             // Public variables and functions
 
             load: function () {
-                layout();
-                fallbacks();
+                setupLayout();
                 attach();
             }
+
         };
 
     }

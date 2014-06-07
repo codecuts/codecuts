@@ -29,25 +29,25 @@
 				<% end %>
 			</ul>
 		</nav>
-		<header class="section intro">
+		<header id="intro" class="section">
 			<div class="branding">
 				<img class="logo" src="images/logo.png"></img>
 				<h1 class="site-title">CODECUTS</h1>
 			</div>
 		</header>
-		<section class="section hello">
-			<div ng-include src="'partials/hello.html'"></div>
+		<section id="hello" class="section">
+			<div ng-include  src="'partials/hello.html'"></div>
 		</section>
-		<section id="work" class="section work">
+		<section id="work" class="section">
 			<div ng-include src="'partials/work.html'"></div>
 		</section>
-		<section id="about" class="section about">
+		<section id="about" class="section">
 			<div ng-include src="'partials/about.html'"></div>
 		</section>
-		<section id="contact" class="section contact">
+		<section id="contact" class="section">
 			<div ng-include src="'partials/contact.html'"></div>
 		</section>
-		<footer class="section footer">
+		<footer class="footer">
 			<a class="impressum">impressum</a>
 		</footer>
 	</div>

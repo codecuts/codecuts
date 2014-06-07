@@ -101,9 +101,9 @@ a {
 	text-align: center;
 
 	.gap {
-		display: block;
-		height: 0;
-		padding-bottom: 56.25%;
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(center);
 		text-align: center;
 		overflow:hidden;
 	}
@@ -152,7 +152,7 @@ a {
 
 }
 
-	.section.intro {
+	.section#intro {
 		height: 100vh;
 		text-align: center;
 		background: #fff;
@@ -194,7 +194,7 @@ a {
 
 	}
 
-	.section.work {
+	.section#work {
 		 background: #ebebeb;
 
 		.section-content {
@@ -227,7 +227,6 @@ a {
 			> .stack {
 				@include flex(1);
 			}
-
 		}
 
 		.stack {
@@ -272,7 +271,7 @@ a {
 
 	}
 
-	.no-flexbox .section.work {
+	.no-flexbox .section#work {
 
 		.row {
 			display:block;
@@ -295,7 +294,7 @@ a {
 
 	}
 
-	.section.contact {
+	.section#contact {
 
 		.email a {
 			font-size: 3rem;
@@ -303,7 +302,7 @@ a {
 
 	}
 
-	.section.footer {
+	.footer {
 		height: 6rem;
 
 		.impressum {

@@ -1,5 +1,5 @@
 <% if @document.gap: %>
-<div class="gap" style="background: url('http://seamsandstitches.files.wordpress.com/2011/09/morris_lodden_printed_textile_1884.jpg'); background-size: cover;">
+<div class="gap" style="background: url('images/wallpaper_02.jpg'); background-size: cover;">
 	<div class="section-label">
 		<h2 class="title lighttext"><%= @document.title %></h2>
 		<h3 class="subtitle lighttext"><%= @document.subtitle %></h3>
