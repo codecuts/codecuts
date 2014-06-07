@@ -1,5 +1,5 @@
 <section class="project-images">
-	<img>
+	<img src="<%= @document.image %>"/>
 </section>
 <section class="project-info">
 	<header>

@@ -17,7 +17,9 @@
 			<div class="stack">
 			<% end %>
 				<div class="project tile">
-					<img src="<%= project.image %>"/>
+					<a href="<%= project.url%>">
+						<img src="<%= project.image %>"/>
+					</a>
 				</div>
 			<% if ( (i % 3 == 2 && row % 2 ) || (i % 3 == 1 && !(row % 2)) ): %>
 			</div>
