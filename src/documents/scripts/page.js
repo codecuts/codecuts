@@ -20,8 +20,8 @@ module.exports = (function () {
         };
 
         var images = [
-            'images/menu_icon.png',
-            'images/menu_close.png'
+            '/images/menu_icon.png',
+            '/images/menu_close.png'
         ];
 
         function setupLayout() {
@@ -31,6 +31,7 @@ module.exports = (function () {
             window.addEvent('load', function() {
 
                 $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
+                $$('.slider-wrap img').vAlign();
                 $('content').setStyle('height','');
 
             });
@@ -54,10 +55,10 @@ module.exports = (function () {
                 pageState.menuVisible = !pageState.menuVisible;
                 if ( pageState.menuVisible === true ) {
                     e.setStyles({left:0});
-                    t.setProperty('src','images/menu_close.png');
+                    t.setProperty('src','/images/menu_close.png');
                 } else {
                     e.setStyles({left:'-9999px'});
-                    t.setProperty('src','images/menu_icon.png');
+                    t.setProperty('src','/images/menu_icon.png');
                 }
             }
 

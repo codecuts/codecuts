@@ -3,6 +3,7 @@ title: About
 subtitle: Why we do what we do
 layout: partial
 gap: true
+gapBackground: '/images/wallpaper_08b.jpg'
 menuItem: true
 menuOrder: 3
 ---

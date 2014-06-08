@@ -1,11 +1,18 @@
-<section class="project-images">
-	<img src="<%= @document.image %>"/>
-</section>
-<section class="project-info">
-	<header>
-		<h1 class="project-title"><%= @document.title %></h1>
-	</headers>
-	<div class="project-description">
-		<%= @document.content %>
-	</div>
-</section>
+<%- @partial('header') %>
+	<section class="project-images">
+		<div class="slider-wrap">
+			<img class="slider" src="<%= @document.image %>"/>
+		</div>
+	</section>
+	<section class="project-info">
+		<header>
+			<h1 class="project-title"><%= @document.title %></h1>
+		</headers>
+		<div class="project-description">
+			<%- @content %>
+		</div>
+	</section>
+	<footer class="footer">
+		<a class="home-link" href="<%= @site.url %>"><img src="/images/back_arrow.png"/><span>back to home</span></a>
+	</footer>
+<%- @partial('footer') %>

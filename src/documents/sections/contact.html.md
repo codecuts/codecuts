@@ -3,6 +3,7 @@ title: Contact
 subtitle: request a quote or just say hello
 layout: partial
 gap: true
+gapBackground: '/images/wallpaper_08a.jpg'
 menuItem: true
 menuOrder: 3
 ---
