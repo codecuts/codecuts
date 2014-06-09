@@ -61,32 +61,38 @@ a {
 }
 
 .menu {
-	position: fixed;
-	top: 0;
-	left: -9999px;
+	position: absolute;
+	top: 100vh;
+	//left: -9999px;
 	width: 100%;
+	height: 6rem;
 	margin: 0;
 	background: #fff;
+	z-index: $aboveItAll;
+	border: 1px solid black;
 
-	 -moz-box-shadow:    0 4px 12px 0px #ccc;
-	 -webkit-box-shadow: 0 4px 12px 0px #ccc;
-	 box-shadow:         0 4px 12px 0px #ccc;
+	 -moz-box-shadow:    0 10px 6px -6px #ccc;
+	 -webkit-box-shadow: 0 10px 6px -6px #ccc;
+	 box-shadow:         0 10px 6px -6px #ccc;
 
 	ul {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+		@include flexbox;
+		@include justify-content(center);
 		margin: 0;
+		padding: 0;
 		list-style: none;
 	}
 
 	a {
 		display: flex;
-		padding: 1.5rem;
+		padding: 2rem;
+		font-size: 1.8rem;
+		font-weight: 300;
 	}
 }
 
 #menu-toggle {
+	display: none;
 	position: fixed;
 	top: 1em;
 	left: 1em;
@@ -156,36 +162,54 @@ a {
 }
 
 	.section#intro {
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(center);
 		height: 100vh;
 		text-align: center;
-		background: #e7efbf;
+		background: #fff;
 
-		&:before {
-			content: '';
-			display: inline-block;
-			height: 100%;
-			vertical-align: middle;
-		}
+//		&:before {
+//			content: '';
+//			display: inline-block;
+//			height: 100%;
+//			vertical-align: middle;
+//		}
 
 		.branding {
 			display: inline-block;
 			vertical-align: middle;
+
+			.logo-video {
+				background: #fff;
+			}
+
+			.logo {
+				width: 100%;
+				margin-bottom: 1em;
+			}
+
+			.site-title {
+				display: none;
+				margin: 0;
+				font-weight:300;
+				letter-spacing: 2.2px;
+				text-decoration: underline;
+			}
 		}
 
-		.logo {
-			width: 40%;
-			margin-bottom: 1em;
-		}
+		.invitation {
+			position: absolute;
+			bottom: 2em;
+			left: 50%;
+			width: 3rem;
+			height: 3rem;
+			margin-left: -1.5rem;
+			
+			img {
+				width: 100%;
+			}
 
-		.site-title {
-			margin: 0;
-			font-weight:300;
-			letter-spacing: 2.2px;
-			text-decoration: underline;
-		}
-
-		.section-content {
-			background: #fff;
 		}
 
 		@media (min-width: $smalldevice-min) {
@@ -193,6 +217,14 @@ a {
 			.logo {
 				width: 50%;
 			}
+		}
+
+	}
+
+	.section#hello {
+
+		.section-content {
+			padding-top: 5em;
 		}
 
 	}
@@ -323,6 +355,11 @@ a {
 
 	#content {
 		background: $backgroundColor;
+	}
+
+	.menu {
+		position: fixed;
+		top: 0;
 	}
 
 	.project-images {

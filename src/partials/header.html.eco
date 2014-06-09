@@ -20,9 +20,12 @@
 		</div>
 		<nav role="navigation" class="menu">
 			<ul>
+				<li>
+					<a class="menu-item" title="Home" href="<%= @site.url %>#intro">Home</a>
+				</li>
 				<% for page in @getCollection('html').findAllLive({menuItem:true},[{menuOrder:1}]).toJSON(): %>
 				<li>
-					<a class="menu-item" title="<%= page.title %>" href="#<%= page.title.toLowerCase() %>" name="#<%= page.title.toLowerCase() %>">
+					<a class="menu-item" title="<%= page.title %>" href="<%= @site.url %>/#<%= page.title.toLowerCase() %>" name="#<%= page.title.toLowerCase() %>">
 					  <%= page.title %>
 					</a>
 				</li>

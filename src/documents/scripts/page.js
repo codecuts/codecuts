@@ -3,6 +3,8 @@ module.exports = (function () {
 
     var instance;
 
+    var scroll = new Fx.Scroll(window, {duration: 750});
+
     function init() {
 
         // Singleton
@@ -11,6 +13,7 @@ module.exports = (function () {
         require('browsernizr/test/css/vhunit');
         require('browsernizr/test/css/vwunit');
         require('browsernizr/test/css/flexbox');
+        require('browsernizr/test/video');
         var Modernizr = require('browsernizr');
 
         require('./moohelpers.js');
@@ -24,9 +27,24 @@ module.exports = (function () {
             '/images/menu_close.png'
         ];
 
+        function checkForHash() {
+            var hash = window.location.hash.replace('/','');
+
+            if ( hash === '' ) {
+                return;
+            }
+
+            window.addEvent('load', function() {
+                scroll.toElement($$(hash).pick());
+            });
+
+        }
+
         function setupLayout() {
 
-            $('content').setStyles({overflow: 'hidden', height: window.getSize().y});
+            //$('content').setStyles({overflow: 'hidden', height: window.getSize().y});
+
+//            alert($$('html').getProperty('class'));
 
             window.addEvent('load', function() {
 
@@ -39,7 +57,6 @@ module.exports = (function () {
         }
 
         function updateLayout() {
-            console.log('update layout');
             $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
         }
 
@@ -62,6 +79,22 @@ module.exports = (function () {
                 }
             }
 
+            function menuFix() {
+                if ( $$('body').pick().hasClass('project') ) {
+                    console.log('here');
+                    return; 
+                }
+
+                var el = $$('.menu').pick(),
+                    scroll = window.getScroll(),
+                    scrn = window.getSize();
+                if ( scroll.y > scrn.y ) {
+                    el.setStyles({position:'fixed',top:'0'});
+                } else {
+                    el.setStyles({position:'absolute',top:''});
+                }
+            }
+
             function menuClick(e) {
                 new Event(e).stop();
                 menuToggle();
@@ -74,8 +107,9 @@ module.exports = (function () {
             // event assignment
             window.addEvent('load', preloader(images));
             window.addEvent('resize', updateLayout.debounce(250));
-            $('menu-toggle').addEvent('click', menuToggle);
-            $$('.menu-item').addEvent('click', menuClick);
+            window.addEvent('scroll', menuFix);
+            //$('menu-toggle').addEvent('click', menuToggle);
+            //$$('.menu-item').addEvent('click', menuClick);
 
         }
 
@@ -114,6 +148,7 @@ module.exports = (function () {
             load: function () {
                 setupLayout();
                 attach();
+                checkForHash();
             }
 
         };

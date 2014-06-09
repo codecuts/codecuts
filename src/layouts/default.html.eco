@@ -1,12 +1,15 @@
 <%- @partial('header') %>
 		<header id="intro" class="section">
 			<div class="branding">
-				<!--<img class="logo" src="images/logo.png"></img>-->
-				<video title="Code Cuts" src="/images/logo_v_05.mp4" autoplay></video>
+				<img class="logo" src="images/logo_v_05.gif"></img>
+				<h1 class="site-title">CodeCuts</h1>
+			</div>
+			<div class="invitation">
+				<a href="#hello"><img src="/images/down_arrow.png"/></a>
 			</div>
 		</header>
 		<section id="hello" class="section">
-			<div ng-include  src="'sections/hello.html'" onload="'alert('hi');'"></div>
+			<div ng-include  src="'sections/hello.html'"></div>
 		</section>
 		<section id="work" class="section">
 			<div ng-include src="'sections/work.html'"></div>
@@ -17,7 +20,7 @@
 		<section id="contact" class="section">
 			<div ng-include src="'sections/contact.html'"></div>
 		</section>
-		<footer class="footer">
+		<footer id="footer" class="footer">
 			<a class="impressum">impressum</a>
 		</footer>
 	</div>
