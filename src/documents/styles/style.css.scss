@@ -69,7 +69,6 @@ a {
 	margin: 0;
 	background: #fff;
 	z-index: $aboveItAll;
-	border: 1px solid black;
 
 	 -moz-box-shadow:    0 10px 6px -6px #ccc;
 	 -webkit-box-shadow: 0 10px 6px -6px #ccc;
@@ -179,13 +178,14 @@ a {
 		.branding {
 			display: inline-block;
 			vertical-align: middle;
+			margin-top: -5%;
 
 			.logo-video {
 				background: #fff;
 			}
 
 			.logo {
-				width: 100%;
+				width: 50%;
 				margin-bottom: 1em;
 			}
 
@@ -200,12 +200,12 @@ a {
 
 		.invitation {
 			position: absolute;
-			bottom: 2em;
+			bottom: 5rem;
 			left: 50%;
 			width: 3rem;
 			height: 3rem;
 			margin-left: -1.5rem;
-			
+
 			img {
 				width: 100%;
 			}
