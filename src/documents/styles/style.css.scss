@@ -47,7 +47,6 @@ html {
 #content {
 	width: 100%;
 	font-size: $basefontsize;
-//	background: url('/images/background.png') repeat;
 
 	@media (min-width: $smalldevice-min) { }
 	@media (min-width: $mediumdevice-min) {  }
@@ -63,7 +62,6 @@ a {
 .menu {
 	position: absolute;
 	top: 100vh;
-	//left: -9999px;
 	width: 100%;
 	height: 6rem;
 	margin: 0;
@@ -128,7 +126,7 @@ a {
 
 	.section-content {
 		display: inline-block;
-		padding: 30px 4.8%;
+		margin: 30px 4.8%;
 		background: $backgroundColor;
 		text-align: left;
 
@@ -167,6 +165,7 @@ a {
 		height: 100vh;
 		text-align: center;
 		background: #fff;
+		margin-bottom: 6rem;
 
 //		&:before {
 //			content: '';
@@ -221,15 +220,15 @@ a {
 
 	}
 
-	.section#hello {
+	.section.hello {
 
 		.section-content {
-			padding-top: 5em;
+//			padding-top: 6em;
 		}
 
 	}
 
-	.section#work {
+	.section.work {
 		 background: $backgroundColor;
 
 		.section-content {
@@ -294,7 +293,7 @@ a {
 				margin: 0 auto;
 			}
 
-			.row:nth-of-type(2) {
+			.row:nth-of-type(3) {
 				padding-top: 6rem;
 			}
 
@@ -306,7 +305,7 @@ a {
 
 	}
 
-	.no-flexbox .section#work {
+	.no-flexbox .section.work {
 
 		.row {
 			display:block;
@@ -329,7 +328,7 @@ a {
 
 	}
 
-	.section#contact {
+	.section.contact {
 
 		.email a {
 			font-size: 3rem;

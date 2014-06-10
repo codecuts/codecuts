@@ -1,4 +1,5 @@
 ---
+title: Hello
 layout: partial
 gap: false
 menuItem: false

@@ -3,7 +3,13 @@ module.exports = (function () {
 
     var instance;
 
-    var scroll = new Fx.Scroll(window, {duration: 750});
+    var scroll = new Fx.Scroll(window, {
+        duration: 750, 
+        offset: {
+            x: 0,
+            y: -60
+        }
+    });
 
     function init() {
 
@@ -63,7 +69,13 @@ module.exports = (function () {
         function attach() {
 
              // activate smooth scrolling on menu anchor click
-            new Fx.SmoothScroll({duration: 750});
+            new Fx.SmoothScroll({
+                duration: 750, 
+                offset: {
+                    x:0,
+                    y: -60
+                }
+            });
 
             // event callbacks
             function menuToggle() {
@@ -82,7 +94,7 @@ module.exports = (function () {
             function menuFix() {
                 if ( $$('body').pick().hasClass('project') ) {
                     console.log('here');
-                    return; 
+                    return;
                 }
 
                 var el = $$('.menu').pick(),
@@ -95,11 +107,6 @@ module.exports = (function () {
                 }
             }
 
-            function menuClick(e) {
-                new Event(e).stop();
-                menuToggle();
-            }
-
             function updateLayout() {
                 $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
             }
@@ -109,7 +116,7 @@ module.exports = (function () {
             window.addEvent('resize', updateLayout.debounce(250));
             window.addEvent('scroll', menuFix);
             //$('menu-toggle').addEvent('click', menuToggle);
-            //$$('.menu-item').addEvent('click', menuClick);
+           
 
         }
 

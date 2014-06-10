@@ -5,19 +5,19 @@
 				<h1 class="site-title">CodeCuts</h1>
 			</div>
 			<div class="invitation">
-				<a href="#hello"><img src="/images/down_arrow.png"/></a>
+				<a href="#Hello"><img src="/images/down_arrow.png"/></a>
 			</div>
 		</header>
-		<section id="hello" class="section">
+		<section class="section hello">
 			<div ng-include  src="'sections/hello.html'"></div>
 		</section>
-		<section id="work" class="section">
+		<section class="section work">
 			<div ng-include src="'sections/work.html'"></div>
 		</section>
-		<section id="about" class="section">
+		<section class="section about">
 			<div ng-include src="'sections/about.html'"></div>
 		</section>
-		<section id="contact" class="section">
+		<section class="section contact">
 			<div ng-include src="'sections/contact.html'"></div>
 		</section>
 		<footer id="footer" class="footer">
