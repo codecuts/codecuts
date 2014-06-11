@@ -13,7 +13,6 @@ module.exports = (function () {
 
     function init() {
 
-
         // Singleton
 
         // Private variables and functions.
@@ -24,6 +23,8 @@ module.exports = (function () {
         var Modernizr = require('browsernizr');
 
         require('./moohelpers.js');
+
+        require('./parallax.js');
 
         var pageState = {
             menuVisible: false
@@ -44,6 +45,21 @@ module.exports = (function () {
             window.addEvent('load', function() {
                 scroll.toElement($$(hash).pick());
             });
+
+        }
+
+        function activeParallax() {
+
+            if ( window.getSize().x > 460 ) {
+
+                window.addEvent('load', function () {
+                    var parallax = new Parallax({
+                        parallaxedClass: 'gap',
+                        factor: 0.5
+                    });
+                });
+
+            }
 
         }
 
