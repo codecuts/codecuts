@@ -44,6 +44,51 @@ html {
 	font-family: 'Ubuntu', sans-serif;
 }
 
+.section-content, 
+.project-info {
+
+	h1, h2, h3 {
+			@extend .darktext;
+			font-size: 1.198em;
+			font-weight: 500;
+		}
+
+		p {
+			@extend .darktext;
+			font-size: 0.959em;
+			font-weight: 300;
+		}
+
+		a {
+			@extend .darktext;
+			font-weight: 700;
+		}
+
+		.line {
+			display: inline-block; 
+			width: 12.5rem;
+			height: 1px; 
+			margin: 0 1.5rem;
+			background: #000;
+		}
+
+		@media (min-width: $smalldevice-min) {
+
+			.column {
+				float:left; 
+				width: 50%; 
+				padding-right: 5%;
+				overflow:hidden;
+			}
+
+			.line {
+				width: 66%;
+			}
+
+		}
+
+}
+
 #content {
 	width: 100%;
 	font-size: $basefontsize;
@@ -125,32 +170,6 @@ a {
 		margin: 30px 4.8%;
 		background: $backgroundColor;
 		text-align: left;
-
-		h1, h2, h3 {
-			@extend .darktext;
-			font-size: 1.198em;
-			font-weight: 500;
-		}
-
-		p {
-			@extend .darktext;
-			font-size: 0.959em;
-			font-weight: 300;
-		}
-
-		a {
-			@extend .darktext;
-			font-weight: 700;
-		}
-
-		.line {
-			display: inline-block; 
-			width: 12.5rem;
-			height: 1px; 
-			margin: 0 1.5rem;
-			background: #000;
-		}
-		
 	}
 
 	@media (min-width: $smalldevice-min) {
@@ -158,21 +177,6 @@ a {
 		.gap,
 		.section-content {
 			font-size: 150%;
-		}
-
-		.section-content {
-
-			.column {
-				float:left; 
-				width: 50%; 
-				padding-right: 5%;
-				overflow:hidden;
-			}
-
-			.line {
-				width: 66%;
-			}
-
 		}
 
 	}
@@ -262,6 +266,7 @@ a {
 
 		.section-content {
 			padding: 0;
+			margin: 0;
 		}
 
 		.tile {
@@ -388,8 +393,8 @@ a {
 			padding-bottom: 78.26%;
 			text-align: center;
 
-			.image {
-				width: 65%;
+			.slider {
+				width: 80%;
 			}
 
 		}
