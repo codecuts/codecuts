@@ -5,8 +5,7 @@
 docpadConfig = {
 	templateData:
 		site:
-			title: "Code Cuts",
-			home_url: 'http://localhost:9778'
+			title: "add site name"
 }
 
 # Export the DocPad Configuration
