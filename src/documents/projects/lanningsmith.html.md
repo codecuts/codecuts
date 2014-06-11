@@ -1,13 +1,16 @@
 ---
 title: LanningSmith.Com
-image: '/images/projects/lanningsmith_01.jpg'
+image: '/images/projects/01.jpg'
 isProject: true
 order: 1
 layout: project
 ---
 Lorem ipsum dolor sit amet, pri dolorem reprimique ne, eros audiam et est. Te cibo probatus eam, petentium sapientem eum ne. Id malis iudico nec, nostrum fastidii his et. Nec unum animal delicatissimi an, quidam iudicabit sit ei, et nisl graece petentium eum.
 
-## Role
+<div style="width: 100%;">
+    <h2 style="display: inline-block; margin-bottom: 0;">Role</h2>
+    <div class="line" style="width:12.5rem;"></div>
+</div>
 
 Design
 Coding & Implementation

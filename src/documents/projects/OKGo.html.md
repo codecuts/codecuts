@@ -1,6 +1,6 @@
 ---
 title: OK Go
-image: '/images/projects/okgo_01.jpg'
+image: '/images/projects/02.jpg'
 isProject: true
 order: 2
 layout: project
