@@ -45,7 +45,12 @@ module.exports = new Class({
 
 	attach: function() {
 		that = this;
-		this.container.addEvent('scroll', this.parallaxScroll);
+		that.container.addEvent('scroll', that.parallaxScroll);
+	},
+
+	detach: function() {
+		that = this;
+		that.container.removeEvent('scroll', that.parallaxScroll);
 	},
 
 	parallaxScroll: function() {

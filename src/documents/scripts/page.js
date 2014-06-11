@@ -1,7 +1,9 @@
 module.exports = (function () {
     'use strict';
 
-    var instance; 
+    var instance;
+
+    var parallax;
 
     var scroll = new Fx.Scroll(window, {
         duration: 750, 
@@ -23,8 +25,8 @@ module.exports = (function () {
         var Modernizr = require('browsernizr');
 
         require('./moohelpers.js');
+        var Parallax = require('./parallax.js');
 
-        require('./parallax.js');
 
         var pageState = {
             menuVisible: false
@@ -48,17 +50,27 @@ module.exports = (function () {
 
         }
 
-        function activeParallax() {
+        function activateParallax() {
 
-            if ( window.getSize().x > 460 ) {
+            parallax = new Parallax({
+                parallaxedClass: 'gap',
+                factor: 0.5
+            });
 
-                window.addEvent('load', function () {
-                    var parallax = new Parallax({
-                        parallaxedClass: 'gap',
-                        factor: 0.5
-                    });
-                });
+            if ( window.getSize().x < 460 ) {
+                parallax.detach();
+            }
 
+        }
+
+        function manageParallax() {
+
+            if ( window.getSize().x < 460 ) {
+                console.log('removing parallax');
+                parallax.detach();
+            } else {
+                console.log('activating parallax');
+                parallax.attach();
             }
 
         }
@@ -95,19 +107,6 @@ module.exports = (function () {
             });
 
             // event callbacks
-            function menuToggle() {
-                var e = $('content').getElement('.menu'),
-                    t = $('menu-toggle').getElement('img');
-                pageState.menuVisible = !pageState.menuVisible;
-                if ( pageState.menuVisible === true ) {
-                    e.setStyles({left:0});
-                    t.setProperty('src','/images/menu_close.png');
-                } else {
-                    e.setStyles({left:'-9999px'});
-                    t.setProperty('src','/images/menu_icon.png');
-                }
-            }
-
             function menuFix() {
                 if ( $$('body').pick().hasClass('project') ) {
                     console.log('here');
@@ -130,10 +129,10 @@ module.exports = (function () {
 
             // event assignment
             window.addEvent('load', preloader(images));
+            window.addEvent('load', activateParallax);
+            window.addEvent('resize', manageParallax.debounce(250));
             window.addEvent('resize', updateLayout.debounce(250));
             window.addEvent('scroll', menuFix);
-            //$('menu-toggle').addEvent('click', menuToggle);
-           
 
         }
 
