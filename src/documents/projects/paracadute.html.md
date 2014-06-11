@@ -1,6 +1,6 @@
 ---
 title: Paracadute
-image: '/images/projects/paracadute_01.jpg'
+image: '/images/projects/02.jpg'
 isProject: true
 order: 4
 layout: project

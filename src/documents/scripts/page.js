@@ -1,7 +1,7 @@
 module.exports = (function () {
     'use strict';
 
-    var instance;
+    var instance; 
 
     var scroll = new Fx.Scroll(window, {
         duration: 750, 
@@ -12,6 +12,7 @@ module.exports = (function () {
     });
 
     function init() {
+
 
         // Singleton
 
