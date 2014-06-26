@@ -44,6 +44,23 @@ html {
 	font-family: 'Ubuntu', sans-serif;
 }
 
+@media (min-width: $smalldevice-min) {
+	.gap,
+	.section-content,
+	.project-info {
+		font-size: 150%;
+	}
+}
+
+@media (mind-width: $largedevice-min) {
+	.gap,
+	.section-content,
+	.project-info {
+		font-size: 200%;
+	}
+}
+
+
 .section-content, 
 .project-info {
 
@@ -88,6 +105,8 @@ html {
 		}
 
 }
+
+
 
 #content {
 	width: 100%;
@@ -368,7 +387,7 @@ a {
 	}
 }
 
-/* Project Pages */ 
+/* Project Pages */
 
 .project {
 
@@ -388,15 +407,32 @@ a {
 		overflow: hidden;
 
 		.slider-wrap {
+			@include flexbox;
+			@include align-items(center);
+			@include justify-content(center);
 			width: 100%;
-			height: 0;
-			padding-bottom: 78.26%;
+			height: 28.5rem;
 			text-align: center;
 
-			.slider {
-				width: 80%;
+			img {
+				width: 60%;
 			}
 
+			iframe {
+				width: 80%;
+				height: 60%;
+			}
+		}
+
+	}
+
+	@media(min-width: 750px) {
+
+		.project-images .slider-wrap {
+			width: 75rem;
+			height: 0.7826 * 75rem;
+			padding: 0;
+			margin: 0 auto;
 		}
 
 	}
@@ -423,17 +459,6 @@ a {
 			}
 
 		}
-	}
-
-	@media(min-width: 750px) {
-
-		.project-images .slider-wrap {
-			width: 75rem;
-			height: 0.7826 * 75rem;
-			padding: 0;
-			margin: 0 auto;
-		}
-
 	}
 
 	@media(min-width: $largedevice-min) {
