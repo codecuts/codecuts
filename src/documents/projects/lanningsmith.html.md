@@ -1,12 +1,14 @@
 ---
 title: LanningSmith.Com
+subtitle: website
+project_url: 'http://lanningsmith.com'
+featured_image: '/images/projects/01.jpg'
 image: '/images/projects/01.jpg'
 isProject: true
 order: 1
 layout: project
 ---
-Lorem ipsum dolor sit amet, pri dolorem reprimique ne, eros audiam et est. Te cibo probatus eam, petentium sapientem eum ne. Id malis iudico nec, nostrum fastidii his et. Nec unum animal delicatissimi an, quidam iudicabit sit ei, et nisl graece petentium eum.
-
+Website for the Brooklyn based production designers and fabricators Lanningsmith. THE LANNINGSMITH STOREFRONT HOSTS AN ONGOING AND EVER-CHANGING SERIES OF EXHIBITIONS, PRESENTATIONS, BRAND COLLABORATIONS AND EVENTS, so the site was built to allow for users to filter through the diverse portfolio and focus on a single project at a time.
 <div style="width: 100%;">
     <h2 style="display: inline-block; margin-bottom: 0;">Role</h2>
     <div class="line" style="width:12.5rem;"></div>
@@ -14,8 +16,3 @@ Lorem ipsum dolor sit amet, pri dolorem reprimique ne, eros audiam et est. Te ci
 
 Design
 Coding & Implementation
-
-Ex eum assum moderatius referrentur, mei ne postulant scripserit, rebum aliquip offendit pri in. Qui ei tantas putent denique, per detracto delicata disputando id. Menandri evertitur disputando per in, eos ea noster putant, et debitis platonem vim. Vidisse vivendum ea has, ea duo vitae euripidis vituperatoribus, sit legimus moderatius ne. His eu vocent convenire, no vim voluptaria suscipiantur. Mucius delenit voluptatum mei at.
-
-Nisl exerci ignota vel an, ea quod iudicabit nam, vix simul dicant doming et. Eam oratio dicunt te, nec ex menandri concludaturque. Id mea dico bonorum, eligendi conclusionemque vix ne, et est liber graeci maiorum. Eius appetere comprehensam has in.
-

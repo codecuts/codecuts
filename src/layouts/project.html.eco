@@ -1,12 +1,19 @@
 <%- @partial('header') %>
 	<section class="project-images">
 		<div class="slider-wrap">
-			<img class="slider" src="<%= @document.image %>"/>
+			<% if ( typeof @document.image != 'undefined' ) :  %>
+				<img class="slider" src="<%= @document.image %>"/>
+			<% end %>
+			<% if ( typeof @document.video_embed != 'undefined' ) : %>
+				<%- @document.video_embed %>
+			<% end %>
 		</div>
 	</section>
 	<section class="project-info">
 		<header>
-			<h1 class="project-title"><%= @document.title %></h1>
+			<h1 class="project-title">
+				<a href="<%= @document.project_url %>"><%= @document.title %></a>: 
+				<span class="subtitle"><%= @document.subtitle %></span></h1>
 		</headers>
 		<div class="project-description">
 			<%- @content %>
