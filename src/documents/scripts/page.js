@@ -66,10 +66,8 @@ module.exports = (function () {
         function manageParallax() {
 
             if ( window.getSize().x < 460 ) {
-                console.log('removing parallax');
                 parallax.detach();
             } else {
-                console.log('activating parallax');
                 parallax.attach();
             }
 
@@ -84,7 +82,7 @@ module.exports = (function () {
             window.addEvent('load', function() {
 
                 $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
-                $$('.slider-wrap img').vAlign();
+                //$$('.slider-wrap img').vAlign();
                 $('content').setStyle('height','');
 
             });
