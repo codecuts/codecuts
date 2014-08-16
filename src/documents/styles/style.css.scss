@@ -190,30 +190,28 @@ a {
 		margin: 30px 4.8%;
 		background: $backgroundColor;
 		text-align: left;
+		font-size: 130%;
 	}
 
 	@media (min-width: $smalldevice-min) {
 
-		.gap,
-		.section-content {
-			font-size: 150%;
+		.gap {
+			font-size: 130%;
 		}
 
 	}
 
 	@media (min-width: $mediumdevice-min) {
 
-		.gap,
-		.section-content {
-			font-size: 150%;
+		.gap {
+			font-size: 170%;
 		}
 
 	}
 
 	@media (min-width: $largedevice-min) {
 
-		.gap,
-		.section-content {
+		.gap {
 			font-size: 200%;
 		}
 
