@@ -115,9 +115,19 @@ module.exports = (function () {
                     scroll = window.getScroll(),
                     scrn = window.getSize();
                 if ( scroll.y > scrn.y ) {
-                    el.setStyles({position:'fixed',top:'0'});
+                    el.setStyles({
+                        'position':'fixed',top:'0',
+                        '-moz-box-shadow': '0 10px 6px -6px #ccc',
+                        '-webkit-box-shadow': '0 10px 6px -6px #ccc',
+                        'box-shadow': '0 10px 6px -6px #ccc'
+                    });
                 } else {
-                    el.setStyles({position:'absolute',top:''});
+                    el.setStyles({
+                        position:'absolute',top:'',
+                        '-mox-box-shadow': '',
+                        '-webkit-box-shadow': '',
+                        'box-shadow': ''
+                    });
                 }
             }
 
