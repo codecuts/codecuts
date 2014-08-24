@@ -93,7 +93,7 @@ module.exports = (function () {
             });
 
             $$('.logo-video').pick().addEventListener('ended', function() {
-                $$('.invitation').setStyle('opacity', '1');
+                $$('.invitation').setStyle('opacity', '0.9');
             });
 
         }

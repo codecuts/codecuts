@@ -3,7 +3,7 @@ title: Work
 subtitle: tailored solutions & custom design
 layout: partial
 gap: true
-gapBackground: '/images/wallpaper_08a.jpg'
+gapBackground: '/images/new_gap_bg1.jpg'
 menuItem: true
 menuOrder: 2
 ---

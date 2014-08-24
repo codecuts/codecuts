@@ -33,6 +33,10 @@ $aboveItAll: 1000;
 	left: -9999px !important;
 }
 
+.flexbox {
+	@include flexbox;
+}
+
 * {
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -350,7 +354,7 @@ a {
 			}
 
 			.row {
-				height: 2/3 * 108rem;
+				height: 2/3 * 94rem;
 			}
 
 		}
