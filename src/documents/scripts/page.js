@@ -124,7 +124,7 @@ module.exports = (function () {
                 var el = $$('.menu').pick(),
                     scroll = window.getScroll(),
                     scrn = window.getSize();
-                if ( scroll.y > scrn.y ) {
+                if ( scroll.y >= scrn.y ) {
                     el.setStyles({
                         'position':'fixed',top:'0',
                         '-moz-box-shadow': '0 10px 6px -6px #ccc',
