@@ -1,10 +1,9 @@
 <%- @partial('header') %>
 		<header id="intro" class="section">
 			<div class="branding">
-				<!--<img class="logo" src="images/logo_v_05.gif"></img>
-				<h1 class="site-title">CodeCuts</h1>-->
-				<video class="logo-video" volume="0" preload autoplay muted>
-					<source src="/images/logo.mp4" type="video/mp4">
+				<video class="logo-video" preload autoplay>
+					<source src="/images/logointro_bigscreen.mp4" type="video/mp4">
+					<source src="/images/logointro_bigscreen.ogv" type="video/ogg">
 				</video>
 			</div>
 			<div class="invitation">

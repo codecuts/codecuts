@@ -7,6 +7,22 @@ module.exports = (function() {
         e.setStyle('margin-top', m);
     });
 
+    Element.implement('centerInParent', function() {
+    	console.log('centerInParent');
+    	var e = this,
+    		p = e.getParent(),
+    		vDif = (p.getSize().y - e.getSize().y) / 2,
+    		hDif = (p.getSize().x - e.getSize().x) / 2;
+
+    	console.log(e.getSize());
+    	console.log('p:', p.getSize().x, p.getSize().y);
+    	console.log('e:', e.getSize().x, e.getSize().y);
+    	console.log(vDif,hDif);
+
+		e.setStyle('margin-top', vDif);
+		e.setStyle('margin-left', hDif);
+    });
+
     Element.implement('isVisible', function(partial,direction) {
 
     	partial = typeof partial !== 'undefined' ? partial : false;

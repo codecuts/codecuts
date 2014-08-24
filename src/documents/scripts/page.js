@@ -37,6 +37,8 @@ module.exports = (function () {
             '/images/menu_close.png'
         ];
 
+        loadSpeedTest();
+
         function checkForHash() {
             var hash = window.location.hash.replace('/','');
 
@@ -74,10 +76,9 @@ module.exports = (function () {
         }
 
         function setupLayout() {
-
-            //$('content').setStyles({overflow: 'hidden', height: window.getSize().y});
-
 //            alert($$('html').getProperty('class'));
+
+            fallbacks();
 
             window.addEvent('load', function() {
 
@@ -87,10 +88,15 @@ module.exports = (function () {
 
             });
 
+            $$('.logo-video').pick().addEventListener('loadedmetadata', function() {
+                positionVideo();
+            });
+
         }
 
         function updateLayout() {
             $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
+            positionVideo();
         }
 
         function attach() {
@@ -133,6 +139,7 @@ module.exports = (function () {
 
             function updateLayout() {
                 $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
+                positionVideo();
             }
 
             // event assignment
@@ -148,16 +155,16 @@ module.exports = (function () {
             var tests = $$('html').pick().getProperty('class').split(' ');
 
             if ( tests.contains('no-cssvhunit') ) {
-                var el = $('content').getElement('.intro');
+                console.log('fallbacks test: no-cssvhunit');
+
+                var el = $('content').getElements('#intro');
                 el.setStyles({
                     height: window.getSize().y,
                     width: window.getSize().x
                 });
+
             }
 
-            if ( tests.contains('no-cssvwunit') ) {
-                alert($$('html').pick().getProperty('class'));
-            }
         }
 
         function preloader(images) {
@@ -170,6 +177,36 @@ module.exports = (function () {
 
                 }
             }
+        }
+
+       function positionVideo() {
+            var vid = $$('.logo-video').pick(),
+                vidAspect = vid.videoWidth / vid.videoHeight,
+                scrnAspect = window.getSize().x / window.getSize().y;
+
+            console.log(vidAspect, scrnAspect);
+
+            if ( vidAspect < scrnAspect ) {
+                vid.setStyles({'width': '100%', 'height': 'auto'});
+            } else {
+                vid.setStyles({'width': 'auto', 'height': '102%'});
+            }
+
+            vid.centerInParent();
+        }
+
+        function loadSpeedTest() {
+
+//            console.log('loadSpeedTest: called at', new Date.getTime());
+
+            var slowLoad = window.setTimeout( function() {
+                console.log( "the page is taking its sweet time loading" );
+            }, 1 );
+
+             document.addEventListener( 'load', function() {
+                window.clearTimeout( slowLoad );
+            }, false );
+
         }
 
         return {
