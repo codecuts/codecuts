@@ -2,9 +2,8 @@
 title: Head Tennis
 featured_image: '/images/projects/05.jpg'
 image: '/images/projects/05.jpg'
-isProject: true
+publish: true
 order: 1
-layout: project
 ---
 [HEAD.com/g](http://HEAD.com/g): Mobile and Tablet adaptations
 

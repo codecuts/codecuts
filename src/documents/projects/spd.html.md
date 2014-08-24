@@ -2,9 +2,8 @@
 title: SPD
 featured_image: '/images/projects/04.jpg'
 image: '/images/projects/04.jpg'
-isProject: true
+publish: true
 order: 3
-layout: project
 ---
 
 To celebrate its 150th anniversary SPD organized a 2 day festival infront of the Brandenber Gate. For the main stage  a 17 screen 5 channel animation for the main stage was created. The animation was used between acts to display festival information and was also integrated into the live visuals for the featured performances.
