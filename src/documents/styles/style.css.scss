@@ -216,7 +216,7 @@ a {
 		}
 
 		.section-content {
-			width: 108rem;
+			width: 94rem;
 			padding: 30px 0;
 			margin: 0 auto;
 		}
@@ -264,8 +264,21 @@ a {
 			height: 3rem;
 			margin-left: -1.5rem;
 
+			-webkit-transition: opacity 3s ease;
+        	-moz-transition: opacity 3s ease;
+            -o-transition: opacity 3s ease;
+            transition: opacity 3s ease;
+
 			img {
 				width: 100%;
+			}
+
+		}
+
+		@media (min-width: $smalldevice-min) {
+
+			.invitation {
+				opacity: 0;
 			}
 
 		}

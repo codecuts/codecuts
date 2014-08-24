@@ -92,6 +92,10 @@ module.exports = (function () {
                 positionVideo();
             });
 
+            $$('.logo-video').pick().addEventListener('ended', function() {
+                $$('.invitation').setStyle('opacity', '1');
+            });
+
         }
 
         function updateLayout() {
