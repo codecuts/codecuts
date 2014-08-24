@@ -1,6 +1,5 @@
 ---
 title: Work
-subtitle: tailored solutions & custom design
 layout: partial
 gap: true
 gapBackground: '/images/new_gap_bg1.jpg'
