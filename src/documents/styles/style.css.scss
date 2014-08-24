@@ -1,6 +1,7 @@
 @import 'normalize';
 @import 'flex';
 @import "compass/css3/opacity";
+@import "compass/css3/transform";
 
 /* fonts */
 $basefontsize: 1.6em;
@@ -109,7 +110,6 @@ html {
 		}
 
 }
-
 
 
 #content {
@@ -399,8 +399,10 @@ a {
 /* Project Pages */
 
 .project {
+	width: 100%;
 
 	#content {
+		width: 100%;
 		background: $backgroundColor;
 	}
 
@@ -452,30 +454,44 @@ a {
 	}
 
 	.footer {
-		height: 3em;
+		min-height: 15rem;
 		background: $backgroundColor;
 		padding: 0 2rem;
 
-		.home-link {
-
-			img {
-				height: 18px;
-			}
-
-			span {
-				vertical-align: top;
-				padding: 0 1rem;
-			}
-
+		.back-arrow {
+			display:inline-block;
+			@include rotate(180deg);
+			font-size: 3rem;
 		}
+
+		.back-arrow-label {
+			vertical-align: super;
+			padding: 0 1rem;
+		}
+
 	}
 
 	@media(min-width: $largedevice-min) {
 
 		.project-info, 
 		.footer {
-			width: 108rem;
+			width: 94rem;
 			margin: 0 auto;
+		}
+
+		.footer {
+			margin-top: 2rem;
+		}
+
+		.home-link {
+
+			.back-arrow {
+				font-size: 4rem;
+			}
+
+			.back-arrow-label {
+				font-size: 2.4rem;
+			}
 		}
 
 	}
