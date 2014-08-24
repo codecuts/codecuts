@@ -7,7 +7,7 @@
 				</video>
 			</div>
 			<div class="invitation">
-				<a href="#Hello"><img src="/images/down_arrow.png"/></a>
+				<a href="#Hello"><img src="/images/down_arrow_d6d6d6.png"/></a>
 			</div>
 		</header>
 		<section class="section hello">
@@ -15,9 +15,6 @@
 		</section>
 		<section class="section work">
 			<div ng-include src="'sections/work.html'"></div>
-		</section>
-		<section class="section about">
-			<div ng-include src="'sections/about.html'"></div>
 		</section>
 		<section class="section contact">
 			<div ng-include src="'sections/contact.html'"></div>
