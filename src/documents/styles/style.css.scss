@@ -183,14 +183,8 @@ a {
 		overflow:hidden;
 	}
 
-	.section-label {
-		padding: 1.5% 11%;
-		background: #c7b299;
-		background: rgb(199,178,153); /* Fallback */
-		background: rgba(199,178,153,0.5);
-	}
-
 	.title {
+		margin:0;
 		text-transform: uppercase;
 		font-size: 3em;
 		font-weight: 300;
