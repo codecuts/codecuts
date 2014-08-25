@@ -44,6 +44,10 @@ $aboveItAll: 1000;
 	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+html, body {
+	width: 100%;
+}
+
 html {
 	font-size: 62.5%; /* sets root font size to ~10px */
 	font-family: 'Ubuntu', sans-serif;
