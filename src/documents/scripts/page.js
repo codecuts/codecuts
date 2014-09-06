@@ -67,7 +67,7 @@ module.exports = (function () {
 
         function manageParallax() {
 
-            if ( window.getSize().x < 460 ) {
+            if ( window.getSize().x < 768 ) {
                 parallax.detach();
             } else {
                 parallax.attach();
