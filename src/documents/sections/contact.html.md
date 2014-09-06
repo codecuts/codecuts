@@ -2,7 +2,7 @@
 title: Contact
 layout: partial
 gap: true
-gapBackground: '/images/new_gap_bg3.jpg'
+gapBackground: '/images/cloud_bottomz.jpg'
 menuItem: true
 menuOrder: 3
 ---
