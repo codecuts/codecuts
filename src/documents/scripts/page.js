@@ -117,7 +117,6 @@ module.exports = (function () {
             // event callbacks
             function menuFix() {
                 if ( $$('body').pick().hasClass('project') ) {
-                    console.log('here');
                     return;
                 }
 
