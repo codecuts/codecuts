@@ -5,11 +5,9 @@ gap: false
 menuItem: false
 ---
 ###CodeCuts is a creative digital collective
-We specialize in working with clients in Europe and North America to create tailored solutions and custom designs for websites and applications. Clients hire us because we have the experience and skill to translate their goals into specific functional results.
+CodeCuts specializes in working with clients in Europe and North America to create tailored solutions and custom designs for websites and web applications. We provide our clients with targeted advice about how to leverage web technolgoies for their particular needs.
 
-We utilize state-of-the-art technologies to solve problems efficiently and intelligently to deliver optimized products for our clients and their users. Together we bring broad range of experience and expertise to every project. Everything from initial conceptual frame-working to final testing is done collaboratively and in-house. We solve problems and generate results.
-
-Our technical abilities include professional knowledge of best practices for design and development.
+Together we bring broad range of experience and expertise to every project. Everything from initial conceptual frame-working to final testing is done collaboratively and in-house. Please take a look at our portfolio below.
 
 <div class="column">
     <div style="width: 100%;">
@@ -23,5 +21,5 @@ Our technical abilities include professional knowledge of best practices for des
         <h2 style="display: inline-block; margin-bottom: 0;">Code</h2>
         <div class="line" style="width:80.5%; margin-right:0;"></div>
     </div>
-    <p>PHP, jQuery, Kirby, HTML5 / CSS / SASS, custom wordpress, C, Objective-C, standalone Apps for iPhone / iPad (IOS?)</p>
+    <p>PHP, Javascript, Wordpress, Node, and AngularJS</p>
 </div>

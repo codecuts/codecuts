@@ -2,13 +2,13 @@
 title: Contact
 layout: partial
 gap: true
-gapBackground: '/images/new_gap_bg1.jpg'
+gapBackground: '/images/new_gap_bg3.jpg'
 menuItem: true
 menuOrder: 3
 ---
 ##Request a quote or just say hello
 
-Please contact us with any and all questions. Whether you have a specific idea of an web appliation or website that you would like built, or you are not exactly sure of the best solution for your needs, we can help you discover the best solution. Don't be shy. We'd love to hear from you.
+Please contact us with any and all questions. Whether you have a specific idea for a web application or website that you would like built, or you are not exactly sure of the best solution for your needs, we can help you develop your ideas in the right direction. Don't be shy. We'd love to hear from you.
 <br/>
 <div class="flexbox" style="height:150px; width: 100%" itemscope itemprop="http://schema.org/Organization">
     <div itemprop="logo" style="flex: 1;">

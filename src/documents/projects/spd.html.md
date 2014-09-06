@@ -2,7 +2,7 @@
 title: SPD
 featured_image: '/images/projects/04.jpg'
 image: '/images/projects/04.jpg'
-publish: true
+publish: false
 order: 3
 ---
 
