@@ -14,10 +14,10 @@ module.exports = (function() {
     		vDif = (p.getSize().y - e.getSize().y) / 2,
     		hDif = (p.getSize().x - e.getSize().x) / 2;
 
-    	console.log(e.getSize());
-    	console.log('p:', p.getSize().x, p.getSize().y);
-    	console.log('e:', e.getSize().x, e.getSize().y);
-    	console.log(vDif,hDif);
+//    	console.log(e.getSize());
+//    	console.log('p:', p.getSize().x, p.getSize().y);
+//    	console.log('e:', e.getSize().x, e.getSize().y);
+//    	console.log(vDif,hDif);
 
 		e.setStyle('margin-top', vDif);
 		e.setStyle('margin-left', hDif);

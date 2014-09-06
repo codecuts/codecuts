@@ -27,10 +27,11 @@ module.exports = (function () {
         require('./moohelpers.js');
         var Parallax = require('./parallax.js');
 
-
         var pageState = {
             menuVisible: false
         };
+
+        var isDevice = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? true : false;
 
         var images = [
             '/images/menu_icon.png',
@@ -59,7 +60,7 @@ module.exports = (function () {
                 factor: 0.5
             });
 
-            if ( window.getSize().x < 460 ) {
+            if ( isDevice ) {
                 parallax.detach();
             }
 
@@ -67,7 +68,7 @@ module.exports = (function () {
 
         function manageParallax() {
 
-            if ( window.getSize().x < 768 ) {
+            if ( isDevice ) {
                 parallax.detach();
             } else {
                 parallax.attach();
