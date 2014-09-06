@@ -17,6 +17,8 @@ docpadConfig = {
 			@getCollection("html").findAllLive({relativeOutDirPath: 'projects'}).on "add", (model) ->
 				model.setMetaDefaults({layout:'project'})
 
+	watchOptions: preferredMethods: ['watchFile','watchFile']
+
 }
 
 # Export the DocPad Configuration
