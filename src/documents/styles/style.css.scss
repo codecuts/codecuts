@@ -10,7 +10,7 @@ $darkfontcolor: #252525;
 
 /* device size cutoffs */
 $smalldevice-min: 460px;
-$mediumdevice-min: 768px;
+$mediumdevice-min: 780px;
 $largedevice-min: 1080px;
 
 /* colors */
@@ -255,7 +255,7 @@ a {
 
 		}
 
-		@media (min-width: $smalldevice-min) {
+		@media (min-width: $mediumdevice-min) {
 
 			.branding {
 				background: #000;
