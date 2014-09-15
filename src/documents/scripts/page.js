@@ -1,10 +1,20 @@
+/** 
+ * Page module is the websites 'view'. It is instantiated as a singleton.
+ * The Singleton instance is created when the object is loaded for the first
+ * time and the module's getInstance() function is called.
+ *
+ * @module page 
+ **/
 module.exports = (function () {
     'use strict';
 
+    /** Holds the singleton instance */
     var instance;
 
+    /** Holds the parallax module once loaded. */
     var parallax;
 
+    /** Holds the MooTools scroll class, instantiated right away */
     var scroll = new Fx.Scroll(window, {
         duration: 750, 
         offset: {
@@ -13,33 +23,56 @@ module.exports = (function () {
         }
     });
 
+    /**
+     * Initializes the page module Singleton instance.
+     * 
+     * Contains all of the functions for the module. The methods that are public
+     * are declared in the object returned by the function; the method declared 
+     * in the body of the function are private.
+     * 
+     * @constructor
+     * @return {object} An object containing the module's public properties and methods.
+     */
     function init() {
+        /**
+         * Singleton instance declared here. All private functions appear
+         * inside this function.
+         */
 
-        // Singleton
-
-        // Private variables and functions.
+        /** Load necessary modenrizr tests */
         require('browsernizr/test/css/vhunit');
         require('browsernizr/test/css/vwunit');
         require('browsernizr/test/css/flexbox');
         require('browsernizr/test/video');
         var Modernizr = require('browsernizr');
 
+        /** Load custom helper functions */
         require('./moohelpers.js');
+
+        /** Load Parallax module */
         var Parallax = require('./parallax.js');
 
+        /** Tracks some information about the state of the page */
         var pageState = {
             menuVisible: false
         };
 
+        /** Boolean captures whether the page has been loaded on a mobile device or not */
         var isDevice = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? true : false;
 
+        /** For preloading some images */
         var images = [
             '/images/menu_icon.png',
             '/images/menu_close.png'
         ];
 
-        loadSpeedTest();
-
+       /**
+        * Handles the instance in which the page is loaded with a hash.
+        * 
+        * Checks if the page is being loaded with a hash designation.
+        * If so, the method adds an event that scrolls to the appropriate
+        * hash location when the page has fully loaded.
+        */
         function checkForHash() {
             var hash = window.location.hash.replace('/','');
 
@@ -53,6 +86,9 @@ module.exports = (function () {
 
         }
 
+        /**
+         * Activates the parallax effect on the page
+         */
         function activateParallax() {
 
             parallax = new Parallax({
@@ -66,6 +102,12 @@ module.exports = (function () {
 
         }
 
+        /**
+         * Manages the parallax effect on the page
+         * 
+         * If the page has been loaded on the mobile device, the 
+         * parallax effect is disabled.
+         */
         function manageParallax() {
 
             if ( isDevice ) {
@@ -76,6 +118,9 @@ module.exports = (function () {
 
         }
 
+        /**
+         * Manages the initial layout setup for the page
+         */
         function setupLayout() {
 //            alert($$('html').getProperty('class'));
 
@@ -99,14 +144,12 @@ module.exports = (function () {
 
         }
 
-        function updateLayout() {
-            $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
-            positionVideo();
-        }
-
+        /**
+         * 'Attaches' all the necessary events to the page
+         */
         function attach() {
 
-             // activate smooth scrolling on menu anchor click
+            /** Activate smooth scrolling on menu anchor click */
             new Fx.SmoothScroll({
                 duration: 750, 
                 offset: {
@@ -115,7 +158,12 @@ module.exports = (function () {
                 }
             });
 
-            // event callbacks
+            // Event callbacks -- called by events, which are listed below.
+            //
+
+            /** 
+             * Handles the 'fixing' of the menu to top of page when user scrolls downward.
+             */
             function menuFix() {
                 if ( $$('body').pick().hasClass('project') ) {
                     return;
@@ -141,12 +189,16 @@ module.exports = (function () {
                 }
             }
 
+            /**
+             * Manages the update of the layout when page is resized.
+             */
             function updateLayout() {
                 $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
                 positionVideo();
             }
 
-            // event assignment
+            // Event assignments
+            //
             window.addEvent('load', preloader(images));
             window.addEvent('load', activateParallax);
             window.addEvent('resize', manageParallax.debounce(250));
@@ -155,6 +207,11 @@ module.exports = (function () {
 
         }
 
+        /**
+         * Checks for instances in which certain 'fallbacks' are needed
+         * to make page work correctly on certain browsers. Uses Modernizr 
+         * tests, for example, to determine capabilities of client's browser.
+         */
         function fallbacks() {
             var tests = $$('html').pick().getProperty('class').split(' ');
 
@@ -171,6 +228,10 @@ module.exports = (function () {
 
         }
 
+        /**
+         * Handles preloading of images designated in the module's
+         * 'image' property.
+         */
         function preloader(images) {
             var img, preload = [];
             if ( document.images ) {
@@ -183,6 +244,9 @@ module.exports = (function () {
             }
         }
 
+        /** 
+         * Positions the intro logo video correctly on the page.
+         */
        function positionVideo() {
             var vid = $$('.logo-video').pick(),
                 vidAspect = vid.videoWidth / vid.videoHeight,
@@ -199,24 +263,27 @@ module.exports = (function () {
             vid.centerInParent();
         }
 
-        function loadSpeedTest() {
-
+// This was a function that might help detect if the client's internet connection was too slow to load the logo video.
+//        function loadSpeedTest() {
+//
 //            console.log('loadSpeedTest: called at', new Date.getTime());
-
-            var slowLoad = window.setTimeout( function() {
-                console.log( "the page is taking its sweet time loading" );
-            }, 1 );
-
-             document.addEventListener( 'load', function() {
-                window.clearTimeout( slowLoad );
-            }, false );
-
-        }
+//
+//            var slowLoad = window.setTimeout( function() {
+//                console.log( "the page is taking its sweet time loading" );
+//            }, 1 );
+//
+//             document.addEventListener( 'load', function() {
+//                window.clearTimeout( slowLoad );
+//           }, false );
+//       }
 
         return {
 
             // Public variables and functions
 
+            /** 
+             * Calls the functions needed to load the page
+             */
             load: function () {
                 setupLayout();
                 attach();
@@ -224,11 +291,14 @@ module.exports = (function () {
             }
 
         };
-
     }
 
     return {
 
+        /** 
+         * Returns the Singleton instance of the page module.
+         * @return {Object} Instance of the Singleton page module.
+         */
         getInstance: function() {
 
             if ( !instance ) {
