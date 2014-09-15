@@ -1,5 +1,12 @@
+/**
+ * Module containing helper functions augmenting MooTools
+ * @module moohelpers
+ **/
 module.exports = (function() {
 
+	/** 
+	 * Vertically aligns the element upon which it is called.
+	 */
     Element.implement('vAlign', function() {
         var e = this,
             p = e.getParent(),
@@ -7,6 +14,10 @@ module.exports = (function() {
         e.setStyle('margin-top', m);
     });
 
+
+    /**
+     *  Centers the element upon which it is called within the containning parent element.
+     */
     Element.implement('centerInParent', function() {
     	console.log('centerInParent');
     	var e = this,
@@ -23,6 +34,17 @@ module.exports = (function() {
 		e.setStyle('margin-left', hDif);
     });
 
+    /** 
+     * Returns true if element is visible, false if not, depending on 
+     * certain specified options. 
+     *
+     * @param {Boolean} partial Contains boolean determing if method should count 
+     *     element visible if only partially visible; default is false.
+     * @param {string} direction Contains string (both|vertical|horizontal) dictating whether the element should
+     *    be counted as visible against horizontal or vertical constraings; default is 'both'.
+     *
+     * @return {Boolean} If the element is visible or not.
+     */
     Element.implement('isVisible', function(partial,direction) {
 
     	partial = typeof partial !== 'undefined' ? partial : false;
@@ -63,10 +85,17 @@ module.exports = (function() {
     });
 
 
-	// Returns a function, that, as long as it continues to be invoked, will not
-	// be triggered. The function will be called after it stops being called for
-	// N milliseconds. If `immediate` is passed, trigger the function on the
-	// leading edge, instead of the trailing.
+	/**
+	 * Returns a function, that, as long as it continues to be invoked, will not
+	 * be triggered. The function will be called after it stops being called for
+	 * N milliseconds. If `immediate` is passed, trigger the function on the
+	 * leading edge, instead of the trailing.
+	 * 
+	 * @param {int} wait Number of millisecond to wait before function calls itself again.
+	 * @param {Boolean} immediate If true then function will be triggered on leading edge instead of trailing.
+	 * 
+	 * @return {Function} Function that will continue to call itself until no longer invoked.
+	 */
 	Function.implement('debounce', function(wait, immediate) {
 		var timeout, args, context, timestamp, result;
 
