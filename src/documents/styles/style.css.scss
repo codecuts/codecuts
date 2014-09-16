@@ -55,10 +55,12 @@ $aboveItAll: 1000;
 
 	.btn-cta {
 		@extend .btn;
-		padding: 1.4rem 4.8rem;
+		width: 27.6rem;
+		height: 8.3rem;
 		background: #000;
-		font-size: $basefontsize !important;
+		font-size: 1em !important;
 		font-weight: 300 !important;
+		line-height: 2.038em;
 		color: $lightfontcolor !important;
 	}
 
@@ -89,11 +91,11 @@ html {
 	}
 }
 
-@media (mind-width: $largedevice-min) {
+@media (min-width: $largedevice-min) {
 	.gap,
 	.section-content,
 	.project-info {
-		font-size: 200%;
+		font-size: 179%;
 	}
 }
 
@@ -103,7 +105,7 @@ html {
 
 	h1 {
 		@extend .darktext;
-		font-size: 1.198em;
+		font-size: 1.098em;
 		font-weight: 700;
 	}
 
@@ -250,7 +252,7 @@ a {
 		margin: 30px 4.8%;
 		background: $backgroundColor;
 		text-align: left;
-		font-size: 130%;
+//		font-size: 130%;
 	}
 
 	@media (min-width: $smalldevice-min) {
