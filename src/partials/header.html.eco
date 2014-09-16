@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><%= @document.title %></title>
-	<meta name="description" content="">
+	<meta name="description" content="<%= @site.description %>">
+	<meta name="keywords" lang="en" content="<%= @site.keywords %>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<%- @getBlock("meta").toHTML() %>
     <%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
-	
     <script src="/vendor/angular.min.js"></script>
     <script src="/vendor/mootools-core.js"></script>
     <script src="/vendor/mootools-more.js"></script>

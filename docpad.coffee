@@ -9,15 +9,25 @@ docpadConfig = {
     # Complete listing of default values can be found here: http://docpad.org/docs/template-data
 	templateData:
 		site:
-			title: "Code Cuts",
-			url: 'http://localhost:9778'
+			title: "CodeCuts (dev)",
+			url: 'localhost:9778',
+			description: """
+			CodeCuts is a creative digital collective.""",
+			keywords: """
+			Javscript, PHP, Ruby, NodeJS, AngularJS, CodeCuts, JS, programming, coding, berlin, agency, web applications,
+			websites, web 2.0, concepts, design, problem solving, projects"""
 
 	collections:
 		projects: ->
 			@getCollection("html").findAllLive({relativeOutDirPath: 'projects'}).on "add", (model) ->
 				model.setMetaDefaults({layout:'project'})
 
-	watchOptions: preferredMethods: ['watchFile','watchFile']
+	environments:
+		static: 
+			templateData:
+				site:
+					title: "CodeCuts",
+					url: "http://staging.code-cuts.com"
 
 }
 
