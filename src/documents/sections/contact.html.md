@@ -6,7 +6,7 @@ gapBackground: '/images/cloud_bottomz.jpg'
 menuItem: true
 menuOrder: 3
 ---
-##Request a quote or just say hello
+#Request a quote or just say hello
 
 Whether you have a specific idea for a web application or website that you would like built, or you are not exactly sure of the best solution for your needs, we can help you develop your ideas in the right direction. Don't be shy. We'd love to hear from you.
 <br/>
@@ -17,7 +17,7 @@ Whether you have a specific idea for a web application or website that you would
 <div class="column contact-info">
     <div style="width: 100%" itemscope itemprop="http://schema.org/Organization">
         <div itemprop="logo">
-            <img src="/images/logo_simple.svg" style="width: 20%;" />
+            <img src="/images/logo_simple_03.svg" style="width: 20%;" />
         </div>
         <br/>
         <div>
