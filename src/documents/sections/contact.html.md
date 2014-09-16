@@ -35,7 +35,7 @@ Whether you have a specific idea for a web application or website that you would
     </div>
 </div>
 <div class="column client-list">
-    <h2>Proud to have worked with:</h2>
+    <h1>Proud to have worked with:</h1>
     <p>
         Lanningsmith / OKGO / Lavender Diamond / Paracadute / Hidden Recordings / Autre Ne Veut / YPS* / DZ Bank* / HEAD Tennis* / Aklamio / Aimaq von Lobenstein* / WWF* / SPD* / Essence* / SANDEMANs New Europe / ERGO* / ERGO Direkt* / Crumpler / Lorem Ipsum / Yadda Yadda
     </p>
