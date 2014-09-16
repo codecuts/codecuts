@@ -73,18 +73,18 @@ module.exports = (function () {
         * If so, the method adds an event that scrolls to the appropriate
         * hash location when the page has fully loaded.
         */
-        function checkForHash() {
-            var hash = window.location.hash.replace('/','');
-
-            if ( hash === '' ) {
-                return;
-            }
-
-            window.addEvent('load', function() {
-                scroll.toElement($$(hash).pick());
-            });
-
-        }
+//        function checkForHash() {
+//            var hash = window.location.hash.replace('/','');
+//
+//            if ( hash === '' ) {
+//                return;
+//            }
+//
+//            window.addEvent('load', function() {
+//                scroll.toElement($$(hash).pick());
+//            });
+//
+//        }
 
         /**
          * Activates the parallax effect on the page
