@@ -103,12 +103,12 @@ html {
 	h1 {
 		@extend .darktext;
 		font-size: 1.198em;
-		font-weight: 500;
+		font-weight: 700;
 	}
 
 	h2 {
 		font-size: 0.959em;
-		font-weight: 300;
+		font-weight: 500;
 	}
 
 	p {
@@ -441,9 +441,10 @@ a {
 
 .footer {
 	height: 6rem;
-	background: red;
+	background: $backgroundColor;
 
 	.impressum {
+		display:none;
 		float: right;
 		height: 100%;
 		padding: 1.1em;
