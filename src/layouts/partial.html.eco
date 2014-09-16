@@ -10,7 +10,7 @@
 <div id="<%= @document.title %>" class="section-content">
 	<% i = 0 %>
 	<% row = 1 %>
-	<% for project in @getCollection('projects').findAllLive({publish:true}).toJSON(): %>
+	<% for project in @getCollection('projects').findAllLive({publish:true},[{order:1}]).toJSON(): %>
 		<% if (i % 3 == 0): %>
 			<div class="row">
 		<% end %>

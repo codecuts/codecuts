@@ -34,6 +34,33 @@ $aboveItAll: 1000;
 	left: -9999px !important;
 }
 
+.btn {
+	display: inline-block;
+	padding: 0.6rem 1.2rem;
+	font-size: 1.2rem;
+	font-weight: 400 !important;
+	line-height: 1.438em;
+	text-align: center;
+	white-space: no-wrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+	.btn-cta {
+		@extend .btn;
+		padding: 0.8rem 1.2rem;
+		background: #000;
+		font-size: $basefontsize !important;
+		color: $lightfontcolor !important;
+	}
+
 .flexbox {
 	@include flexbox;
 }
@@ -73,45 +100,66 @@ html {
 .section-content, 
 .project-info {
 
-	h1, h2, h3 {
-			@extend .darktext;
-			font-size: 1.198em;
-			font-weight: 500;
-		}
+	h1 {
+		@extend .darktext;
+		font-size: 1.198em;
+		font-weight: 500;
+	}
 
-		p {
-			@extend .darktext;
-			font-size: 0.959em;
-			font-weight: 300;
-		}
+	h2 {
+		font-size: 0.959em;
+		font-weight: 300;
+	}
 
-		a {
-			@extend .darktext;
-			font-weight: 700;
+	p {
+		@extend .darktext;
+		font-size: 0.959em;
+		font-weight: 300;
+	}
+
+	a {
+		@extend .darktext;
+		font-weight: 700;
+	}
+
+	.line {
+		display: inline-block; 
+		width: 17.5rem;
+		height: 1px; 
+		margin: 0 1.5rem;
+		background: #000;
+	}
+
+	.label-with-line {
+		@include flexbox;
+		@include justify-content(space-between);
+
+		h2 {
+			@include flex(0,0,auto);
+			margin: 0;
 		}
 
 		.line {
-			display: inline-block; 
-			width: 12.5rem;
-			height: 1px; 
-			margin: 0 1.5rem;
-			background: #000;
+			@include flex(1,1,auto);
+			@include align-self(flex-end);
+		}
+	}
+
+	@media (min-width: $smalldevice-min) {
+
+		.column {
+			display: block;
+			float:left; 
+			width: 50%; 
+			padding-right: 5%;
+//			overflow:hidden;
 		}
 
-		@media (min-width: $smalldevice-min) {
-
-			.column {
-				float:left; 
-				width: 50%; 
-				padding-right: 5%;
-				overflow:hidden;
-			}
-
-			.line {
-				width: 66%;
-			}
-
+		.line {
+			width: 66%;
 		}
+
+	}
 
 }
 
@@ -393,6 +441,7 @@ a {
 
 .footer {
 	height: 6rem;
+	background: red;
 
 	.impressum {
 		float: right;
@@ -423,31 +472,48 @@ a {
 		background: #fff;
 		margin-top: 6rem;
 		overflow: hidden;
+	}
 
-		.slider-wrap {
-			@include flexbox;
-			@include align-items(center);
-			@include justify-content(center);
-			width: 100%;
-			padding: 1.5rem 0;
-			text-align: center;
+	.slider-wrap {
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(center);
+		width: 100%;
+		padding: 2rem 0;
+		text-align: center;
 
-			img {
-				max-width: 60%;
-				max-height: 65%;
-			}
-
-			iframe {
-				width: 80%;
-				height: 60%;
-			}
+		img {
+			width: 85%;
 		}
 
+		iframe {
+			width: 80%;
+			height: 60%;
+		}
 	}
 
 	.project-info {
 		padding: 3rem 2rem;
 		background: $backgroundColor;
+	}
+
+	.project-title {
+		margin-bottom: 0.4rem;
+	}
+
+	.project-subtitle {
+		margin: 0;
+	}
+
+	.project-roles {
+		width: 100%;
+		margin: 1em 0;
+	}
+
+	.roles-list {
+		list-style: none;
+		width: 100%;
+		padding: 0;
 	}
 
 	.footer {
@@ -458,18 +524,27 @@ a {
 		.back-arrow {
 			display:inline-block;
 			@include rotate(180deg);
-			font-size: 3rem;
+			font-size: 2.45rem;
 		}
 
 		.back-arrow-label {
 			vertical-align: super;
 			padding: 0 1rem;
 			font-size: 1.4rem;
+			font-weight: 400;
 		}
 
 	}
 
 	@media(min-width: $largedevice-min) {
+
+		.slider-wrap {
+			padding: 5rem 0;
+
+			img { 
+				width: 30%; 
+			}
+		}
 
 		.project-info, 
 		.footer {
@@ -477,8 +552,59 @@ a {
 			margin: 0 auto;
 		}
 
+		.project-info {
+			@include flexbox;
+			@include flex-direction(row-reverse);
+			@include flex-wrap(wrap);
+			@include justify-content(space-around);
+
+			header {
+				@include flex-grow(1);
+				min-width: 100%;
+				margin-bottom: 4rem;
+			}
+
+			.project-subtitle {
+				font-size: 1.2em;
+			}
+
+			.project-description {
+				@include flex-grow(2);
+				width: 60%;
+			}
+
+			.project-roles {
+				@include flex-grow(1);
+				width: 39%;
+				padding-right: 4rem;
+			}
+		}
+
 		.footer {
+			@include flexbox;
+			@include justify-content(space-around);
 			margin-top: 2rem;
+
+			.place-holder {
+				display: block;
+				width: 39%;
+			}
+
+			.home-link-wrap {
+				width: 60%;
+			}
+
+			.back-arrow {
+				height: 4.15rem;
+				font-size: 3.5rem;
+			}
+
+			.back-arrow-label {
+				padding: 0 0.2rem;
+				font-size: 2.2rem;
+			}
+
+
 		}
 
 	}

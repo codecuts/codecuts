@@ -1,17 +1,16 @@
 ---
-title: LanningSmith.Com
-subtitle: website
+title: lanningsmith.com
+subtitle: Website & CMS 
 project_url: 'http://lanningsmith.com'
 featured_image: '/images/projects/01.jpg'
 image: '/images/projects/01.jpg'
+roles: Design, Coding & Implementation
 publish: true
 order: 1
 ---
-Website for the Brooklyn based production designers and fabricators Lanningsmith. THE LANNINGSMITH STOREFRONT HOSTS AN ONGOING AND EVER-CHANGING SERIES OF EXHIBITIONS, PRESENTATIONS, BRAND COLLABORATIONS AND EVENTS, so the site was built to allow for users to filter through the diverse portfolio and focus on a single project at a time.
-<div style="width: 100%;">
-    <h2 style="display: inline-block; margin-bottom: 0;">Role</h2>
-    <div class="line" style="width:12.5rem;"></div>
-</div>
 
-Design
-Coding & Implementation
+We built this website for the exciting Brooklyn-based crew of production designers and fabricators who go by the name LanningSmith. In their own description of LanningSmith they say:
+
+> "The LanningSmith storefront hosts an ongoing and ever-changing series of exhibitions, presentations, brand collaborations and events."
+
+The site we built for LanningSmith, therefore, allow users to filter through the studio's diverse and changing portfolio. It's essentially an instantly updateable and dynamic portfolio. It can even be presented to clients on-site using an iPad.

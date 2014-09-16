@@ -12,14 +12,36 @@
 	<section class="project-info">
 		<header>
 			<h1 class="project-title">
-				<a href="<%= @document.project_url %>"><%= @document.title %></a>: 
-				<span class="subtitle"><%= @document.subtitle %></span></h1>
-		</headers>
+				<a href="<%= @document.project_url %>"><%= @document.title %></a><br/> 
+			</h1>
+			<h2 class="project-subtitle">
+				<%= @document.subtitle %>
+			</h2>
+		</header>
 		<div class="project-description">
 			<%- @content %>
 		</div>
+		<div class="project-roles">
+			<% if @document.roles != undefined : %>
+				<div class="label-with-line project-roles-label">
+				    <h2>Our Role(s)</h2>
+				    <div class="line"></div>
+				</div>
+				<ul class="roles-list">
+					<% roles = @document.roles %>
+					<% for role in roles.split(',') : %>
+						<%- '<li>' + role + '</li>' %>
+					<% end %>
+				</ul>
+			<% end %>
+		</div>
 	</section>
 	<footer class="footer">
-		<a class="home-link" href="<%= @site.url %>"><span class="back-arrow">&#10141;</span><span class="back-arrow-label">back to overview</span></a>
+		<div class="place-holder"></div>
+		<div class="home-link-wrap">
+			<a class="home-link" href="<%= @site.url %>">
+				<span class="back-arrow">&#10141;</span><span class="back-arrow-label">back to overview</span>
+			</a>
+		</div>
 	</footer>
 <%- @partial('footer') %>
