@@ -82,7 +82,7 @@ module.exports = (function () {
             window.addEvent('resize', manageParallax.debounce(250));
             window.addEvent('resize', updateLayout.debounce(250));
             window.addEvent('scroll', menuFix);
-            window.addEvent('load', preloader(preload));
+//            window.addEvent('load', preloader(preload));
 
         }
 
@@ -151,7 +151,6 @@ module.exports = (function () {
             window.addEvent('load', function() {
 
                 $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
-                console.log($$('.gap').getStyle('height')[0]);
                 $('content').setStyle('height','');
 
             });
