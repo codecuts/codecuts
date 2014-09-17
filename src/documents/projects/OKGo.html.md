@@ -2,8 +2,9 @@
 title: Okgo.net
 subtitle: Website & CMS
 project_url: 'http://okgo.net'
-featured_image: '/images/projects/okgo_home_sq.jpg'
-image: '/images/projects/02.jpg'
+featured_image: '/images/projects/okgo_700.jpg'
+image: '/images/projects/okgo_920.jpg'
+bgColor: '#e1f3fd'
 roles: Coding & Implementation, Design by Louisa Armbrust
 publish: true
 order: 6

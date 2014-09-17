@@ -1,8 +1,9 @@
 ---
 title: Head Tennis
-featured_image: '/images/projects/05.jpg'
+featured_image: '/images/projects/head_g_700.jpg'
 image: '/images/projects/05.jpg'
 project_url: 'http://HEAD.com/g'
+bgColor: '#e6efba'
 roles: Website Design
 publish: true
 order: 5
