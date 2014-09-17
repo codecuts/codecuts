@@ -1,3 +1,10 @@
 	<%- @getBlock("scripts").add(["/scripts/all.js"]).toHTML() %>
+	<% images = []; %>
+	<% for file in @getFilesAtPath({relativeOutDirPath: 'images/'}).toJSON() : %>
+		<% images.push(file.url) %>
+	<% end %>
+	<script>
+	var imagesToPreload = JSON.parse('<%- JSON.stringify images %>');
+	</script>
 </body>
 </html>

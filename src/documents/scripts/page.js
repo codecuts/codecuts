@@ -61,10 +61,52 @@ module.exports = (function () {
         var isDevice = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? true : false;
 
         /** For preloading some images */
-        var images = [
-            '/images/menu_icon.png',
-            '/images/menu_close.png'
-        ];
+        var preload = imagesToPreload;
+
+        /**
+         * 'Attaches' all the necessary events to the page
+         */
+        function attach() {
+           
+            /** Activate smooth scrolling on menu anchor click */
+            new Fx.SmoothScroll({
+                duration: 750, 
+                offset: {
+                    x:0,
+                    y: -60
+                }
+            });
+
+            //Event assignments
+            window.addEvent('load', preloader(preload));
+            window.addEvent('load', activateParallax);
+            window.addEvent('resize', manageParallax.debounce(250));
+            window.addEvent('resize', updateLayout.debounce(250));
+            window.addEvent('scroll', menuFix);
+
+        }
+
+        /**
+         * Checks for instances in which certain 'fallbacks' are needed
+         * to make page work correctly on certain browsers. Uses Modernizr 
+         * tests, for example, to determine capabilities of client's browser.
+         */
+        function fallbacks() {
+            var tests = $$('html').pick().getProperty('class').split(' ');
+
+            if ( tests.contains('no-cssvhunit') ) {
+                console.log('fallbacks test: no-cssvhunit');
+
+                var el = $('content').getElements('#intro');
+                el.setStyles({
+                    height: window.getSize().y,
+                    width: window.getSize().x
+                });
+
+            }
+
+        }
+
 
        /**
         * Handles the instance in which the page is loaded with a hash.
@@ -90,6 +132,7 @@ module.exports = (function () {
          * Activates the parallax effect on the page
          */
         function activateParallax() {
+            console.log('activateParallax called');
 
             parallax = new Parallax({
                 parallaxedClass: 'gap',
@@ -129,6 +172,7 @@ module.exports = (function () {
             window.addEvent('load', function() {
 
                 $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
+                console.log($$('.gap').getStyle('height')[0]);
                 //$$('.slider-wrap img').vAlign();
                 $('content').setStyle('height','');
 
@@ -144,104 +188,55 @@ module.exports = (function () {
 
         }
 
-        /**
-         * 'Attaches' all the necessary events to the page
-         */
-        function attach() {
-
-            /** Activate smooth scrolling on menu anchor click */
-            new Fx.SmoothScroll({
-                duration: 750, 
-                offset: {
-                    x:0,
-                    y: -60
-                }
-            });
-
-            // Event callbacks -- called by events, which are listed below.
-            //
-
-            /** 
-             * Handles the 'fixing' of the menu to top of page when user scrolls downward.
-             */
-            function menuFix() {
-                if ( $$('body').pick().hasClass('project') ) {
-                    return;
-                }
-
-                var el = $$('.menu').pick(),
-                    scroll = window.getScroll(),
-                    scrn = window.getSize();
-                if ( scroll.y >= scrn.y ) {
-                    el.setStyles({
-                        'position':'fixed',top:'0',
-                        '-moz-box-shadow': '0 10px 6px -6px #ccc',
-                        '-webkit-box-shadow': '0 10px 6px -6px #ccc',
-                        'box-shadow': '0 10px 6px -6px #ccc'
-                    });
-                } else {
-                    el.setStyles({
-                        position:'absolute',top:'',
-                        '-mox-box-shadow': '',
-                        '-webkit-box-shadow': '',
-                        'box-shadow': ''
-                    });
-                }
-            }
-
-            /**
-             * Manages the update of the layout when page is resized.
-             */
-            function updateLayout() {
-                $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
-                positionVideo();
-            }
-
-            // Event assignments
-            //
-            window.addEvent('load', preloader(images));
-            window.addEvent('load', activateParallax);
-            window.addEvent('resize', manageParallax.debounce(250));
-            window.addEvent('resize', updateLayout.debounce(250));
-            window.addEvent('scroll', menuFix);
-
-        }
-
-        /**
-         * Checks for instances in which certain 'fallbacks' are needed
-         * to make page work correctly on certain browsers. Uses Modernizr 
-         * tests, for example, to determine capabilities of client's browser.
-         */
-        function fallbacks() {
-            var tests = $$('html').pick().getProperty('class').split(' ');
-
-            if ( tests.contains('no-cssvhunit') ) {
-                console.log('fallbacks test: no-cssvhunit');
-
-                var el = $('content').getElements('#intro');
-                el.setStyles({
-                    height: window.getSize().y,
-                    width: window.getSize().x
-                });
-
-            }
-
-        }
-
+        
         /**
          * Handles preloading of images designated in the module's
          * 'image' property.
          */
         function preloader(images) {
-            var img, preload = [];
-            if ( document.images ) {
+            var img;
+            if ( images ) {
                 for (var i=0; i<images.length; i++) {
                     img = new Image();
                     img.src = images[i];
-                    preload.push(img);
-
                 }
             }
+        }
+
+         /** 
+         * Handles the 'fixing' of the menu to top of page when user scrolls downward.
+         */
+        function menuFix() {
+            if ( $$('body').pick().hasClass('project') ) {
+                return;
+            }
+
+            var el = $$('.menu').pick(),
+                scroll = window.getScroll(),
+                scrn = window.getSize();
+            if ( scroll.y >= scrn.y ) {
+                el.setStyles({
+                    'position':'fixed',top:'0',
+                    '-moz-box-shadow': '0 10px 6px -6px #ccc',
+                    '-webkit-box-shadow': '0 10px 6px -6px #ccc',
+                    'box-shadow': '0 10px 6px -6px #ccc'
+                });
+            } else {
+                el.setStyles({
+                    position:'absolute',top:'',
+                    '-mox-box-shadow': '',
+                    '-webkit-box-shadow': '',
+                    'box-shadow': ''
+                });
+            }
+        }
+
+        /**
+         * Handles the update of the layout when page is resized.
+         */
+        function updateLayout() {
+            $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
+            positionVideo();
         }
 
         /** 
