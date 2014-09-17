@@ -120,7 +120,9 @@ html {
 		font-weight: 500;
 	}
 
-	p {
+	p,
+	span,
+	div {
 		@extend .darktext;
 		font-size: 0.959em;
 		font-weight: 300;
