@@ -287,7 +287,7 @@ module.exports = (function () {
             load: function () {
                 setupLayout();
                 attach();
-                checkForHash();
+//              checkForHash();
             }
 
         };
