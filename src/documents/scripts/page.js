@@ -82,7 +82,7 @@ module.exports = (function () {
             window.addEvent('resize', manageParallax.debounce(250));
             window.addEvent('resize', updateLayout.debounce(250));
             window.addEvent('scroll', menuFix);
-//            window.addEvent('load', preloader(preload));
+            window.addEvent('load', preloader(preload));
 
         }
 
@@ -111,7 +111,6 @@ module.exports = (function () {
          * Event call back that activates the parallax effect on the page
          */
         function activateParallax() {
-            console.log('activateParallax called');
 
             parallax = new Parallax({
                 parallaxedClass: 'gap',
@@ -221,8 +220,6 @@ module.exports = (function () {
             var vid = $$('.logo-video').pick(),
                 vidAspect = vid.videoWidth / vid.videoHeight,
                 scrnAspect = window.getSize().x / window.getSize().y;
-
-            console.log(vidAspect, scrnAspect);
 
             if ( vidAspect < scrnAspect ) {
                 vid.setStyles({'width': '100%', 'height': 'auto'});
