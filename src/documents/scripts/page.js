@@ -82,7 +82,7 @@ module.exports = (function () {
             window.addEvent('resize', manageParallax.debounce(250));
             window.addEvent('resize', updateLayout.debounce(250));
             window.addEvent('scroll', menuFix);
-            window.addEvent('load', preloader(preload));
+            window.addEvent('load', preloader);
 
         }
 
@@ -175,8 +175,9 @@ module.exports = (function () {
         /**
          * Event callback that preloads images 
          */
-        function preloader(images) {
-            var img;
+        function preloader() {
+            var img,
+                images = preload;
             if ( images ) {
                 for (var i=0; i<images.length; i++) {
                     img = new Image();
