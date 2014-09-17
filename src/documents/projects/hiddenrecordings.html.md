@@ -9,9 +9,9 @@ publish: true
 order: 4
 ---
 
-The official website of Hidden Recordings, designed by [Eleanor Chung](http://www.eleanorchung.com/contact) and built by CodeCuts. Hidden Recordings is an internationally known techno label whose tracks you can hear in clubs from Berlin to Detroit. The label issues LPs regularly, but also puts on parties, produces videos and podcasts, and maintains a social presence on sites like Facebook, Twitter, and Youtube.
+Hidden Recordings is an internationally known techno label whose tracks you can hear in clubs from Berlin to Detroit. The label puts out a torrent of high quality club tracks, hosts parties, produces videos and podcasts, and maintains a social presence on sites like Facebook, Twitter, and Youtube.
 
-The challenge of the site was to unify all these realms of Hidden Recordings’ activity into a well-design and website that mirrors the cohesiveness and energy of the social and club scence that surrounds the label. The website is built on a Wordpress CMS for blogging and also includes involves several automated integrations with Facebook, Twitter, and Youtube that pull in new content as it is produced and posted.
+The site we built for them, designed by the artist & designer [Eleanor Chung](http://eleanorchung.com) unifies all these realms into a well-designed web hub that mirrors the cohesiveness and energy of the club scene surrounding the label. The website is built on a Wordpress CMS for blogging and also includes involves several automated integrations with Facebook, Twitter, and Youtube that pull in new content as it is produced and posted.
 
 
 
