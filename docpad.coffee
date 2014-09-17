@@ -10,7 +10,7 @@ docpadConfig = {
 	templateData:
 		site:
 			title: "CodeCuts (dev)",
-			url: 'localhost:9778',
+			url: 'http://localhost:9778',
 			description: """
 			CodeCuts is a creative digital collective.""",
 			keywords: """
