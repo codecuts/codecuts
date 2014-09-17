@@ -129,7 +129,7 @@ module.exports = (function () {
 //        }
 
         /**
-         * Activates the parallax effect on the page
+         * Event call back that activates the parallax effect on the page
          */
         function activateParallax() {
             console.log('activateParallax called');
@@ -146,7 +146,7 @@ module.exports = (function () {
         }
 
         /**
-         * Manages the parallax effect on the page
+         * Event callback that manages the parallax effect on the page
          * 
          * If the page has been loaded on the mobile device, the 
          * parallax effect is disabled.
@@ -162,7 +162,7 @@ module.exports = (function () {
         }
 
         /**
-         * Manages the initial layout setup for the page
+         * Event callback that manages the initial layout setup for the page
          */
         function setupLayout() {
 //            alert($$('html').getProperty('class'));
@@ -188,10 +188,16 @@ module.exports = (function () {
 
         }
 
-        
         /**
-         * Handles preloading of images designated in the module's
-         * 'image' property.
+         * Event callback that handles the update of the layout when page is resized.
+         */
+        function updateLayout() {
+            $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
+            positionVideo();
+        }
+
+        /**
+         * Event callback that preloads images 
          */
         function preloader(images) {
             var img;
@@ -204,7 +210,7 @@ module.exports = (function () {
         }
 
          /** 
-         * Handles the 'fixing' of the menu to top of page when user scrolls downward.
+         * Event callback that handles the 'fixing' of the menu to top of page when user scrolls downward.
          */
         function menuFix() {
             if ( $$('body').pick().hasClass('project') ) {
@@ -229,14 +235,6 @@ module.exports = (function () {
                     'box-shadow': ''
                 });
             }
-        }
-
-        /**
-         * Handles the update of the layout when page is resized.
-         */
-        function updateLayout() {
-            $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
-            positionVideo();
         }
 
         /** 
