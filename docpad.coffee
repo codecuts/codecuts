@@ -15,7 +15,7 @@ docpadConfig = {
 			CodeCuts is a creative digital collective.""",
 			keywords: """
 			Javscript, PHP, Ruby, NodeJS, AngularJS, CodeCuts, JS, programming, coding, berlin, agency, web applications,
-			websites, web 2.0, concepts, design, problem solving, projects"""
+			websites, web 2.0, concepts, design, problem solving, projects, digital"""
 
 	collections:
 		projects: ->
