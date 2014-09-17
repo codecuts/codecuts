@@ -78,11 +78,11 @@ module.exports = (function () {
             });
 
             //Event assignments
-            window.addEvent('load', preloader(preload));
             window.addEvent('load', activateParallax);
             window.addEvent('resize', manageParallax.debounce(250));
             window.addEvent('resize', updateLayout.debounce(250));
             window.addEvent('scroll', menuFix);
+            window.addEvent('load', preloader(preload));
 
         }
 
@@ -106,27 +106,6 @@ module.exports = (function () {
             }
 
         }
-
-
-       /**
-        * Handles the instance in which the page is loaded with a hash.
-        * 
-        * Checks if the page is being loaded with a hash designation.
-        * If so, the method adds an event that scrolls to the appropriate
-        * hash location when the page has fully loaded.
-        */
-//        function checkForHash() {
-//            var hash = window.location.hash.replace('/','');
-//
-//            if ( hash === '' ) {
-//                return;
-//            }
-//
-//            window.addEvent('load', function() {
-//                scroll.toElement($$(hash).pick());
-//            });
-//
-//        }
 
         /**
          * Event call back that activates the parallax effect on the page
@@ -255,6 +234,28 @@ module.exports = (function () {
 
             vid.centerInParent();
         }
+
+
+       /**
+        * Handles the instance in which the page is loaded with a hash.
+        * 
+        * Checks if the page is being loaded with a hash designation.
+        * If so, the method adds an event that scrolls to the appropriate
+        * hash location when the page has fully loaded.
+        */
+//        function checkForHash() {
+//            var hash = window.location.hash.replace('/','');
+//
+//            if ( hash === '' ) {
+//                return;
+//            }
+//
+//            window.addEvent('load', function() {
+//                scroll.toElement($$(hash).pick());
+//            });
+//
+//        }
+
 
 // This was a function that might help detect if the client's internet connection was too slow to load the logo video.
 //        function loadSpeedTest() {
