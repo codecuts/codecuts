@@ -52,16 +52,13 @@ module.exports = (function () {
         /** Load Parallax module */
         var Parallax = require('./parallax.js');
 
-        /** Tracks some information about the state of the page */
+        /** Contains various information about the page and the client it is running on */
         var pageState = {
-            menuVisible: false
+            path: window.location.pathname,
+            isHome: (window.location.pathname === '/') ? true : false,
+            isDevice: (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? true : false,
+            isIE: (/MSIE|Trident.*rv\:11\./i.test(navigator.userAgent)) ? true : false
         };
-
-        /** Boolean captures whether the page has been loaded on a mobile device or not */
-        var isDevice = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? true : false;
-
-        /** Boolean true if the client is runing on IE */
-        var isIE = (/MSIE|Trident.*rv\:11\./i.test(navigator.userAgent)) ? true : false;
         
         /** For preloading some images */
         var preload = imagesToPreload;
@@ -86,6 +83,37 @@ module.exports = (function () {
             window.addEvent('resize', updateLayout.debounce(250));
             window.addEvent('scroll', menuFix);
             window.addEvent('load', preloader);
+            window.addEvent('onhashchange', function() { console.log('eyp'); });
+            window.addEvent('onunload', function() {console.log('erp'); });
+
+        }
+
+        /**
+         * Event callback that manages the initial layout setup for the page
+         */
+        function setupLayout() {
+            console.log('setupLayout called');
+//            alert($$('html').getProperty('class'));
+
+            fallbacks();
+
+            /** Layout stuff to do on the home page */
+            if (pageState.isHome === true) {
+
+                /** Waits for angular's ng-include to load .gap elements */
+                waitForGaps(function() {
+                    $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
+                });
+
+                $$('.logo-video').pick().addEventListener('loadedmetadata', function() {
+                    positionVideo();
+                });
+
+                $$('.logo-video').pick().addEventListener('ended', function() {
+                    $$('.invitation').setStyle('opacity', '0.9');
+                });
+
+            }
 
         }
 
@@ -109,9 +137,18 @@ module.exports = (function () {
             }
 
         }
-
+    
         /**
-         * Event call back that activates the parallax effect on the page
+         * Event callback that handles the update of the layout when page is resized.
+         */
+        function updateLayout() {
+            console.log('updatelayout');
+            $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
+            positionVideo();
+        }
+
+         /**
+         * Event callback that activates the parallax effect on the page
          */
         function activateParallax() {
 
@@ -120,7 +157,7 @@ module.exports = (function () {
                 factor: 0.5
             });
 
-            if ( isDevice ) {
+            if ( pageState.isDevice ) {
                 parallax.detach();
             }
 
@@ -134,44 +171,12 @@ module.exports = (function () {
          */
         function manageParallax() {
 
-            if ( isDevice ) {
+            if ( pageState.isDevice ) {
                 parallax.detach();
             } else {
                 parallax.attach();
             }
 
-        }
-
-        /**
-         * Event callback that manages the initial layout setup for the page
-         */
-        function setupLayout() {
-//            alert($$('html').getProperty('class'));
-
-            fallbacks();
-
-            /** Waits for angular's ng-include to load .gap elements */
-            waitForGaps(function() {
-                $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
-            });
-
-            $$('.logo-video').pick().addEventListener('loadedmetadata', function() {
-                positionVideo();
-            });
-
-            $$('.logo-video').pick().addEventListener('ended', function() {
-                $$('.invitation').setStyle('opacity', '0.9');
-            });
-
-        }
-
-        /**
-         * Event callback that handles the update of the layout when page is resized.
-         */
-        function updateLayout() {
-            console.log('updatelayout');
-            $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
-            positionVideo();
         }
 
         /**
@@ -234,6 +239,7 @@ module.exports = (function () {
         }
 
         function waitForGaps(callback) {
+            console.log('waitForGaps called');
 
             var gapTest = setInterval(function() {areGapsLoaded();}, 10);   // 10 ms between tests
 
