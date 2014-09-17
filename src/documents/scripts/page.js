@@ -152,7 +152,6 @@ module.exports = (function () {
 
                 $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
                 console.log($$('.gap').getStyle('height')[0]);
-                //$$('.slider-wrap img').vAlign();
                 $('content').setStyle('height','');
 
             });
