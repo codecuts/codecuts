@@ -4,6 +4,7 @@ subtitle: Website & CMS (plus Podio integration)
 project_url: 'http://paracadute.net'
 featured_image: '/images/projects/paracadute_0sq.jpg'
 image: '/images/projects/p_920.jpg'
+bgColor: '#e6efba'
 roles: Coding & Implementation
 publish: true
 order: 2
