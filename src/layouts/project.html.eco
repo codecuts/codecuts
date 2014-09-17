@@ -1,5 +1,5 @@
 <%- @partial('header') %>
-	<section class="project-images">
+	<section class="project-images" <% if (@document.bgColor != undefined ) : %>style="background: <%= @document.bgColor %>"<% end %> >
 		<div class="slider-wrap">
 			<% if ( typeof @document.image != 'undefined' ) :  %>
 				<img class="slider" src="<%= @document.image %>"/>
