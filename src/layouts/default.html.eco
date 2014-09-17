@@ -11,7 +11,7 @@
 			</div>
 		</header>
 		<section class="section hello">
-			<div ng-include  src="'sections/hello.html'"></div>
+			<div ng-include onload="alert('hi from hello');" src="'sections/hello.html'"></div>
 		</section>
 		<section class="section work">
 			<div ng-include src="'sections/work.html'"></div>

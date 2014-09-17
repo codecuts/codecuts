@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app>
+<html ng-app xmlns:ng="http://angularjs.org" id="ng-app">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +13,14 @@
     <script src="/vendor/angular.min.js"></script>
     <script src="/vendor/mootools-core.js"></script>
     <script src="/vendor/mootools-more.js"></script>
+    <!-- Polyfills for IE8 (& below!) -->
+	  <!--[if lt IE 9]>
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+	    <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+	    <script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+	    <link data-turbolinks-track="true" href="/stylesheets/ie.css" media="screen" rel="stylesheet" />
+	  <![endif]-->
 </head>
 <body class="<%= @document.layout %>">
 	<div id="content">

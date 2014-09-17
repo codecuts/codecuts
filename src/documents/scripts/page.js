@@ -60,6 +60,9 @@ module.exports = (function () {
         /** Boolean captures whether the page has been loaded on a mobile device or not */
         var isDevice = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? true : false;
 
+        /** Boolean true if the client is runing on IE */
+        var isIE = (/MSIE|Trident.*rv\:11\./i.test(navigator.userAgent)) ? true : false;
+        
         /** For preloading some images */
         var preload = imagesToPreload;
 
@@ -147,11 +150,9 @@ module.exports = (function () {
 
             fallbacks();
 
-            window.addEvent('load', function() {
-
+            /** Waits for angular's ng-include to load .gap elements */
+            waitForGaps(function() {
                 $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
-                $('content').setStyle('height','');
-
             });
 
             $$('.logo-video').pick().addEventListener('loadedmetadata', function() {
@@ -168,6 +169,7 @@ module.exports = (function () {
          * Event callback that handles the update of the layout when page is resized.
          */
         function updateLayout() {
+            console.log('updatelayout');
             $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
             positionVideo();
         }
@@ -229,6 +231,22 @@ module.exports = (function () {
             }
 
             vid.centerInParent();
+        }
+
+        function waitForGaps(callback) {
+
+            var gapTest = setInterval(function() {areGapsLoaded();}, 10);   // 10 ms between tests
+
+            /**
+             * Tests if .gap elements are loaded, if so clear's interval and calls callback.
+             */
+            function areGapsLoaded() {
+                if ( $$('.gap').length > 0 ) {
+                    clearInterval(gapTest);
+                    callback();
+                }
+            }
+
         }
 
 
