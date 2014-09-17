@@ -27,4 +27,4 @@ echo "Deploying ${DIR}/${DEPLOY_SOURCE_DIR} to ${DEPLOY_ACCOUNT}@${DEPLOY_SERVER
  
 docpad generate --env static
 chmod -R og+Xr out
-rsync $NFLAG -rvzp -e "ssh -p ${DEPLOY_PORT}" --size-only --delete --exclude-from="$DIR/.deployignore" "${DIR}/${DEPLOY_SOURCE_DIR}" "${DEPLOY_ACCOUNT}@${DEPLOY_SERVER}:${DEPLOY_DEST_DIR}"
+rsync $NFLAG -rvzp -e "ssh -p ${DEPLOY_PORT}" --delete --exclude-from="$DIR/.deployignore" "${DIR}/${DEPLOY_SOURCE_DIR}" "${DEPLOY_ACCOUNT}@${DEPLOY_SERVER}:${DEPLOY_DEST_DIR}"
