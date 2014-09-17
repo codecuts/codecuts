@@ -18,14 +18,12 @@ Whether you have a specific idea for a web application or website that you would
         <div>
             <a itemprop="email" href="mailto:info@code-cuts.com">info@code-cuts.com</a><br/><br/>
             <div itemscope itemprop="address">
-                <span style="font-style: normal; font-weight: normal;">
                 8743 SW Van Olinda Rd.<br/>
-                <span itemprop="locality">Vashon</span>, <span itemprop="regioin">WA</span> 98070</span>
+                <span itemprop="locality">Vashon</span>, <span itemprop="region">WA</span> 98070</span>
             </div>
             <a itemprop="telephone" href="tel:+16464939263">+1 646 493 9263</a>
             <br/><br/>
             <div itemscope itemprop="address">
-                <span style="font-style: normal; font-weight: normal;">
                 Karl-Marx-Str. 47<br/>
                 <span itemprop="locality">Berlin</span>,<span> 12043</span>
             </div>
