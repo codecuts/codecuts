@@ -24,9 +24,6 @@
 </head>
 <body class="<%= @document.layout %>">
 	<div id="content">
-		<div id="menu-toggle">
-			<img src="/images/menu_icon.png"/>
-		</div>
 		<nav role="navigation" class="menu">
 			<ul>
 				<li>
