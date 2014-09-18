@@ -100,10 +100,7 @@ module.exports = (function () {
             /** Layout stuff to do on the home page */
             if (pageState.isHome === true) {
 
-                /** Waits for angular's ng-include to load .gap elements */
-                waitForGaps(function() {
-                    $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
-                });
+                $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
 
                 $$('.logo-video').pick().addEventListener('loadedmetadata', function() {
                     positionVideo();
@@ -238,22 +235,22 @@ module.exports = (function () {
             vid.centerInParent();
         }
 
-        function waitForGaps(callback) {
-            console.log('waitForGaps called');
-
-            var gapTest = setInterval(function() {areGapsLoaded();}, 10);   // 10 ms between tests
-
-            /**
-             * Tests if .gap elements are loaded, if so clear's interval and calls callback.
-             */
-            function areGapsLoaded() {
-                if ( $$('.gap').length > 0 ) {
-                    clearInterval(gapTest);
-                    callback();
-                }
-            }
-
-        }
+//        function waitForGaps(callback) {
+//            console.log('waitForGaps called');
+//
+//          var gapTest = setInterval(function() {areGapsLoaded();}, 10);   // 10 ms between tests
+//
+//            /**
+//             * Tests if .gap elements are loaded, if so clear's interval and calls callback.
+//             */
+//            function areGapsLoaded() {
+//                if ( $$('.gap').length > 0 ) {
+//                    clearInterval(gapTest);
+//                    callback();
+//                }
+//            }
+//
+//        }
 
 
        /**

@@ -1,13 +1,10 @@
-<% if @document.gap: %>
-<div class="gap" style="background: url(<%= @document.gapBackground %>); background-size: cover;">
-	<div class="section-label">
-		<h2 class="title lighttext"><%= @document.title %></h2>
-		<h3 class="subtitle lighttext"><%= @document.subtitle %></h3>
-	</div>
+<div class="gap" style="background: url(images/cloud_bottomz.jpg)">
+    <div class="section-label">
+        <h2 class="title lighttext">Work</h2>
+        <h3 class="subtitle lighttext"></h3>
+    </div>
 </div>
-<% end %>
-<% if @document.title == 'Work': %>
-<div id="<%= @document.title %>" class="section-content">
+<div id="Work" class="section-content">
 	<% i = 0 %>
 	<% row = 1 %>
 	<% for project in @getCollection('projects').findAllLive({publish:true},[{order:1}]).toJSON(): %>
@@ -32,8 +29,3 @@
 		<% i = i + 1 %>
 	<% end %>
 </div>
-<% else: %>
-<div id="<%= @document.title %>" class="section-content">
-	<%- @content %>
-</div>
-<% end %>

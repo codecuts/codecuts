@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app xmlns:ng="http://angularjs.org" id="ng-app">
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,6 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<%- @getBlock("meta").toHTML() %>
     <%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
-    <script src="/vendor/angular.min.js"></script>
     <script src="/vendor/mootools-core.js"></script>
     <script src="/vendor/mootools-more.js"></script>
     <!-- Polyfills for IE8 (& below!) -->
@@ -29,12 +28,11 @@
 				<li>
 					<a class="menu-item" title="Home" href="<%= @site.url %>#intro">Home</a>
 				</li>
-				<% for page in @getCollection('html').findAllLive({menuItem:true},[{menuOrder:1}]).toJSON(): %>
 				<li>
-					<a class="menu-item" title="<%= page.title %>" href="<%= @site.url %>/#<%= page.title %>" name="#<%= page.title.toLowerCase() %>">
-					  <%= page.title %>
-					</a>
+					<a class="menu-item" title="Work" href="#Work">Work</a>
 				</li>
-				<% end %>
+				<li>
+					<a class="menu-item" title="Work" href="#Contact">Contact</a>
+				</li>
 			</ul>
 		</nav>
