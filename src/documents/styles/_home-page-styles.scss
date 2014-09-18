@@ -35,7 +35,6 @@
 		margin: 30px 4.8%;
 		background: $backgroundColor;
 		text-align: left;
-//		font-size: 130%;
 	}
 
 	@media (min-width: $smalldevice-min) {
@@ -124,6 +123,18 @@
 
 			.invitation {
 				opacity: 0;
+			}
+
+		}
+
+	}
+
+	.section.hello {
+
+		@media (max-width: $mediumdevice-min) {
+
+			.label-with-line {
+				width: 50%;
 			}
 
 		}
