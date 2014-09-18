@@ -21,6 +21,37 @@ $bottom: 10;
 $top: 100;
 $aboveItAll: 1000;
 
+* {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+html, body {
+	width: 100%;
+}
+
+html {
+	font-size: 62.5%; /* sets root font size to ~10px */
+	font-family: 'Ubuntu', sans-serif;
+}
+
+@media (min-width: $smalldevice-min) {
+	.gap,
+	.section-content,
+	.project-info {
+		font-size: 150%;
+	}
+}
+
+@media (min-width: $largedevice-min) {
+	.gap,
+	.section-content,
+	.project-info {
+		font-size: 179%;
+	}
+}
+
 .lighttext {
 	color: $lightfontcolor;
 }
@@ -67,42 +98,10 @@ $aboveItAll: 1000;
 			background: #898989;
 		}
 
-		
 	}
 
 .flexbox {
 	@include flexbox;
-}
-
-* {
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box;         /* Opera/IE 8+ */
-}
-
-html, body {
-	width: 100%;
-}
-
-html {
-	font-size: 62.5%; /* sets root font size to ~10px */
-	font-family: 'Ubuntu', sans-serif;
-}
-
-@media (min-width: $smalldevice-min) {
-	.gap,
-	.section-content,
-	.project-info {
-		font-size: 150%;
-	}
-}
-
-@media (min-width: $largedevice-min) {
-	.gap,
-	.section-content,
-	.project-info {
-		font-size: 179%;
-	}
 }
 
 
@@ -111,26 +110,18 @@ html {
 
 	h1 {
 		@extend .darktext;
-		font-size: 1.098em;
-		font-weight: 700;
-	}
-
-	h2 {
-		font-size: 0.959em;
+		font-size: 1.25em;
 		font-weight: 500;
 	}
 
-	p,
-	span,
-	div {
-		@extend .darktext;
-		font-size: 0.959em;
+	h2 {
+		font-size: 0.999em;
 		font-weight: 300;
 	}
 
 	a {
 		@extend .darktext;
-		font-weight: 700;
+		font-weight: 500;
 	}
 
 	.line {
@@ -145,7 +136,7 @@ html {
 		@include flexbox;
 		@include justify-content(space-between);
 
-		h2 {
+		h1 {
 			@include flex(0,0,auto);
 			margin: 0;
 		}
@@ -167,11 +158,31 @@ html {
 		}
 
 		.line {
-			width: 66%;
+			width: 42%;
 		}
 
 	}
 
+}
+
+.section-content {
+	p,
+	li,
+	span,
+	div {
+		font-size: 0.959em;
+		font-weight: 300;
+	}
+}
+
+.project-info {
+	p,
+	li,
+	span,
+	div {
+		font-size: 0.91em;
+		font-weight: 300;
+	}
 }
 
 
@@ -557,8 +568,8 @@ a {
 		.slider-wrap {
 			padding: 5rem 0;
 
-			img { 
-				width: 42%; 
+			img {
+				width: 42%;
 			}
 		}
 
@@ -580,18 +591,14 @@ a {
 				margin-bottom: 4rem;
 			}
 
-			.project-subtitle {
-				font-size: 1.2em;
-			}
-
 			.project-description {
 				@include flex-grow(2);
-				width: 60%;
+				width: 56%;
 			}
 
 			.project-roles {
 				@include flex-grow(1);
-				width: 39%;
+				width: 43%;
 				padding-right: 4rem;
 			}
 		}

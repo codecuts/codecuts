@@ -24,7 +24,7 @@
 		<div class="project-roles">
 			<% if @document.roles != undefined : %>
 				<div class="label-with-line project-roles-label">
-				    <h2>Our Role(s)</h2>
+				    <h1>Our Role(s)</h2>
 				    <div class="line"></div>
 				</div>
 				<ul class="roles-list">
