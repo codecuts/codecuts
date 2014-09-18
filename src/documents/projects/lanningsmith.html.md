@@ -3,7 +3,7 @@ title: lanningsmith.com
 subtitle: Website & CMS 
 project_url: 'http://lanningsmith.com'
 featured_image: '/images/projects/01.jpg'
-image: '/images/projects/01.jpg'
+image: '/images/projects/ls_920.jpg'
 roles: Design, Coding & Implementation
 publish: true
 order: 1
