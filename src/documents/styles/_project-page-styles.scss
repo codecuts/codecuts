@@ -1,0 +1,156 @@
+/** 
+ * _project-page-styles.scss
+ */
+
+.project {
+	width: 100%;
+
+	#content {
+		width: 100%;
+		background: $backgroundColor;
+	}
+
+	.menu {
+		position: fixed;
+		top: 0;
+	}
+
+	.project-images {
+		width: 100%;
+		background: #fff;
+		margin-top: 6rem;
+		overflow: hidden;
+	}
+
+	.slider-wrap {
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(center);
+		width: 100%;
+		padding: 2rem 0;
+		text-align: center;
+
+		img {
+			width: 85%;
+		}
+
+		iframe {
+			width: 80%;
+			height: 60%;
+		}
+	}
+
+	.project-info {
+		padding: 3rem 2rem;
+		background: $backgroundColor;
+	}
+
+	.project-title {
+		margin-bottom: 0.4rem;
+	}
+
+	.project-subtitle {
+		margin: 0;
+	}
+
+	.project-roles {
+		width: 100%;
+		margin: 1em 0;
+	}
+
+	.roles-list {
+		list-style: none;
+		width: 100%;
+		padding: 0;
+	}
+
+	.footer {
+		min-height: 15rem;
+		background: $backgroundColor;
+		padding: 0 2rem;
+
+		.back-arrow {
+			display:inline-block;
+			@include rotate(180deg);
+			font-size: 2.45rem;
+		}
+
+		.back-arrow-label {
+			vertical-align: super;
+			padding: 0 1rem;
+			font-size: 1.4rem;
+			font-weight: 400;
+		}
+
+	}
+
+	@media(min-width: $largedevice-min) {
+
+		.slider-wrap {
+			padding: 5rem 0;
+
+			img {
+				width: 42%;
+			}
+		}
+
+		.project-info, 
+		.footer {
+			width: 94rem;
+			margin: 0 auto;
+		}
+
+		.project-info {
+			@include flexbox;
+			@include flex-direction(row-reverse);
+			@include flex-wrap(wrap);
+			@include justify-content(space-around);
+
+			header {
+				@include flex-grow(1);
+				min-width: 100%;
+			}
+
+			.project-description {
+				@include flex-grow(2);
+				width: 60%;
+			}
+
+			.project-roles {
+				@include flex-grow(1);
+				width: 39%;
+				padding-right: 4rem;
+			}
+		}
+
+		.footer {
+			@include flexbox;
+			@include justify-content(space-around);
+			margin-top: 2rem;
+
+			.place-holder {
+				display: block;
+				width: 39%;
+			}
+
+			.home-link-wrap {
+				width: 60%;
+			}
+
+			.back-arrow {
+				height: 4.15rem;
+				font-size: 3.5rem;
+				margin-right: 2.6rem;
+			}
+
+			.back-arrow-label {
+				padding: 0 0.2rem;
+				font-size: 2.2rem;
+			}
+
+
+		}
+
+	}
+
+}

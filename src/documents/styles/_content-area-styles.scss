@@ -1,0 +1,93 @@
+/**
+ * _content-area-styles.scss
+ *
+ * These styles apply to content that is laid out in the textual bodies of the
+ * main page's .section-content areas or the individual project page's .project-info
+ * areas.
+ */
+
+
+.section-content {
+	p,
+	li,
+	span,
+	div {
+		font-size: 0.959em;
+		font-weight: 300;
+	}
+}
+
+.project-info {
+	p,
+	li,
+	span,
+	div {
+		font-size: 0.91em;
+		font-weight: 300;
+	}
+}
+
+.section-content, 
+.project-info {
+
+	h1 {
+		@extend .darktext;
+		font-size: 1.25em;
+		font-weight: 500;
+	}
+
+	h2 {
+		font-size: 0.999em;
+		font-weight: 300;
+	}
+
+	a {
+		@extend .darktext;
+		font-weight: 500;
+	}
+
+	.line {
+		display: inline-block; 
+		width: 17.5rem;
+		height: 1px; 
+		margin: 0 1.5rem;
+		background: #000;
+	}
+
+	.label-with-line {
+		@include flexbox;
+		@include justify-content(space-between);
+
+		h1 {
+			@include flex(0,0,auto);
+			margin: 0;
+		}
+
+		h2 {
+			@include flex(0,0,auto);
+			margin: 0;
+		}
+
+		.line {
+			@include flex(1,1,auto);
+			@include align-self(flex-end);
+		}
+	}
+
+	@media (min-width: $smalldevice-min) {
+
+		.column {
+			display: block;
+			float:left; 
+			width: 50%; 
+			padding-right: 5%;
+//			overflow:hidden;
+		}
+
+		.line {
+			width: 42%;
+		}
+
+	}
+
+}

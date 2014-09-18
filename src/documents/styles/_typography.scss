@@ -1,0 +1,24 @@
+/** 
+ * _typography.scss
+ */
+
+html {
+	font-size: 62.5%; /* sets root font size to ~10px */
+	font-family: 'Ubuntu', sans-serif;
+}
+
+@media (min-width: $smalldevice-min) {
+	.gap,
+	.section-content,
+	.project-info {
+		font-size: 150%;
+	}
+}
+
+@media (min-width: $largedevice-min) {
+	.gap,
+	.section-content,
+	.project-info {
+		font-size: 179%;
+	}
+}
