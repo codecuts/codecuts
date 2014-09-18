@@ -593,12 +593,12 @@ a {
 
 			.project-description {
 				@include flex-grow(2);
-				width: 56%;
+				width: 60%;
 			}
 
 			.project-roles {
 				@include flex-grow(1);
-				width: 43%;
+				width: 39%;
 				padding-right: 4rem;
 			}
 		}
