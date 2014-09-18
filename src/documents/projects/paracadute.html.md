@@ -10,4 +10,4 @@ publish: true
 order: 2
 ---
 
-The Official Website for the Record Label Paracadute. The website features an elegant responsive design created by [Daniel Greenfeld](http://danielgreenfeld.com/). Under the hood, the website is integrated with [Podio](http://podio.com), an easy to use business data management application. The goal here was to save time for the label by automating the propagation of new content from the label's data center in Podio into the website. 
+The Official Website for the Record Label Paracadute. The website features an elegant responsive design created by <a target="_blank" href="http://danielgreenfeld.com">Daniel Greenfeld</a>. Under the hood, the website is integrated with [Podio](http://podio.com), an easy to use business data management application. The goal here was to save time for the label by automating the propagation of new content from the label's data center in Podio into the website. 
