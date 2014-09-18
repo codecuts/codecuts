@@ -29,10 +29,10 @@
 					<a class="menu-item" title="Home" href="<%= @site.url %>#intro">Home</a>
 				</li>
 				<li>
-					<a class="menu-item" title="Work" href="#Work">Work</a>
+					<a class="menu-item" title="Work" href="<%= @site.url %>#Work">Work</a>
 				</li>
 				<li>
-					<a class="menu-item" title="Work" href="#Contact">Contact</a>
+					<a class="menu-item" title="Work" href="<%= @site.url %>#Contact">Contact</a>
 				</li>
 			</ul>
 		</nav>
