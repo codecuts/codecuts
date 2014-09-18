@@ -141,6 +141,11 @@ html {
 			margin: 0;
 		}
 
+		h2 {
+			@include flex(0,0,auto);
+			margin: 0;
+		}
+
 		.line {
 			@include flex(1,1,auto);
 			@include align-self(flex-end);
