@@ -10,7 +10,7 @@ publish: true
 order: 6
 ---
 
-The official website for the band OK Go. The website provides a rich hub centralizing the band's rich variety of online presences, including their very active youtube channel, band news, twitter, and facebook. The novelty of this site was the rich way in which it integrates with these other online social forums in order to pull in and aggregate contact in one place. The website was designed by <a target="_blank" href="http://www.louisaarmbrust.com">Louisa Armbrust</a>.
+The official website for the band OK Go. The website provides a rich hub centralizing the band's rich variety of online presences, including their very active youtube channel, band news, twitter, and facebook. The novelty of this site is the rich way in which it integrates with these other online social forums in order to pull in and aggregate content in one place. The website was designed by <a target="_blank" href="http://www.louisaarmbrust.com">Louisa Armbrust</a>.
 
 
 
