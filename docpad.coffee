@@ -29,6 +29,26 @@ docpadConfig = {
 					title: "CodeCuts",
 					url: "http://staging.code-cuts.com"
 
+			events:
+				# Write after
+				# Used to minir our assets with grunt
+				writeAfter: (opts, next) ->
+					# Prepare
+					safeps = require('safeps')
+					pathUtil = require('path')
+					docpad = @docpad
+
+					# Perform the uglify js min task
+					uglify = ['grunt', 'uglify']
+					htmlmin = ['grunt', 'htmlmin']
+
+					# Execute
+					safeps.spawn(uglify, {safe:false,output:true},next)
+					safeps.spawn(htmlmin, {safe:false,output:true},next)
+
+					# Chain
+					@
+
 }
 
 # Export the DocPad Configuration

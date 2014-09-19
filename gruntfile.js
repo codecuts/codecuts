@@ -18,11 +18,37 @@ module.exports = function(grunt) {
                 mootools: true,
                 node: true,
             }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'out/scripts/all.js': ['out/scripts/all.js']
+                }
+            }
+        },
+        htmlmin: {
+            out: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: [
+                    { 'out/index.html': 'out/index.html'},
+                    [{
+                        expand: true,
+                        cwd: 'out/projects',
+                        src: ['**/*.html'],
+                        dest: 'out/projects'
+                    }]
+                ]
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     grunt.registerTask('default', ['browserify','jshint']);
 };
