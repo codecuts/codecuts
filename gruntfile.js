@@ -30,7 +30,8 @@ module.exports = function(grunt) {
             out: {
                 options: {
                     removeComments: true,
-                    collapseWhitespace: true
+                    collapseWhitespace: true,
+                    conservativeCollapse: true
                 },
                 files: [
                     { 'out/index.html': 'out/index.html'},
