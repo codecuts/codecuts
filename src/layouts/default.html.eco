@@ -2,8 +2,8 @@
 		<header id="intro" class="section">
 			<div class="branding">
 				<video class="logo-video" preload autoplay>
-					<source src="logo.mp4" type="video/mp4">
-					<source src="logo.ogv" type="video/ogg">
+					<source src="logo.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
+					<source src="logo.ogv" type="video/ogg; codecs=theora,vorbis" />
 				</video>
 			</div>
 			<div class="invitation">
