@@ -133,6 +133,13 @@ module.exports = (function () {
 
             }
 
+            if ( pageState.isIE === true ) {
+                // fallback to logo image 
+                $$('.branding').setStyle('background',"center/cover url('/images/logo_fallback.jpg') no-repeat");
+                $$('.logo-video').setStyle('display','none');
+                $$('.invitation').setStyle('opacity', '0.9');
+            }
+
         }
     
         /**
