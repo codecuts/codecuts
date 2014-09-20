@@ -27,7 +27,7 @@ docpadConfig = {
 			templateData:
 				site:
 					title: "CodeCuts",
-					url: "http://staging.code-cuts.com"
+					url: "http://code-cuts.com"
 
 			events:
 				# Write after
