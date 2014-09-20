@@ -20,6 +20,13 @@
 	    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
 	    <link data-turbolinks-track="true" href="/stylesheets/ie.css" media="screen" rel="stylesheet" />
 	  <![endif]-->
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="<%= @site.title %>"/> 
+	<meta property="og:url" content="<%= @site.url %>" /> 
+	<meta property="og:title" content="<%= @site.title %> - <%= @document.title %>" />
+	<meta property="og:description" content="<%= @site.description %>" />
+    <meta property="og:image" content="<%= @site.url %>/images/logo_fallback.jpg" />
+    <meta property="og:image:url" content="<%= @site.url %>/images/logo_fallback.jpg" />
 </head>
 <body class="<%= @document.layout %>">
 	<div id="content">
