@@ -20,6 +20,7 @@
 	    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
 	    <link data-turbolinks-track="true" href="/stylesheets/ie.css" media="screen" rel="stylesheet" />
 	  <![endif]-->
+	<!-- Facebook meta tags -->
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="<%= @site.title %>"/> 
 	<meta property="og:url" content="<%= @site.url %>" /> 
@@ -27,6 +28,13 @@
 	<meta property="og:description" content="<%= @site.description %>" />
     <meta property="og:image" content="<%= @site.url %>/images/logo_fallback.jpg" />
     <meta property="og:image:url" content="<%= @site.url %>/images/logo_fallback.jpg" />
+    <!-- Twitter meta tags -->
+    <meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@codekutz" />
+	<meta name="twitter:title" content="<%= @site.title %>" />
+	<meta name="twitter:description" content="<%= @site.description %>" />
+	<meta name="twitter:image" content="<% @site.url %>/images/logo_fallback.jpg" />
+	<meta name="twitter:url" content="<% @site.url %>/images/logo_fallback.jpg" />
 </head>
 <body class="<%= @document.layout %>">
 	<div id="content">
