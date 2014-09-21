@@ -1,9 +1,11 @@
-/** 
+/**
  * Page module is the websites 'view'. It is instantiated as a singleton.
  * The Singleton instance is created when the object is loaded for the first
- * time and the module's getInstance() function is called.
+ * time and the module's getInstance() function is called. Private methods and
+ * variables are located within the init() method; public functions are contained 
+ * in the Object returned by init().
+ * @module page
  *
- * @module page 
  **/
 module.exports = (function () {
     'use strict';
@@ -16,7 +18,7 @@ module.exports = (function () {
 
     /** Holds the MooTools scroll class, instantiated right away */
     var scroll = new Fx.Scroll(window, {
-        duration: 750, 
+        duration: 750,
         offset: {
             x: 0,
             y: -60
@@ -59,7 +61,7 @@ module.exports = (function () {
             isDevice: (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ? true : false,
             isIE: (/MSIE|Trident.*rv\:11\./i.test(navigator.userAgent)) ? true : false
         };
-        
+
         /** For preloading some images */
         var preload = imagesToPreload;
 
@@ -67,7 +69,7 @@ module.exports = (function () {
          * 'Attaches' all the necessary events to the page
          */
         function attach() {
-           
+
             /** Activate smooth scrolling on menu anchor click */
             new Fx.SmoothScroll({
                 duration: 750, 
@@ -92,8 +94,6 @@ module.exports = (function () {
          * Event callback that manages the initial layout setup for the page
          */
         function setupLayout() {
-            console.log('setupLayout called');
-//            alert($$('html').getProperty('class'));
 
             fallbacks();
 
@@ -242,59 +242,6 @@ module.exports = (function () {
             vid.centerInParent();
         }
 
-//        function waitForGaps(callback) {
-//            console.log('waitForGaps called');
-//
-//          var gapTest = setInterval(function() {areGapsLoaded();}, 10);   // 10 ms between tests
-//
-//            /**
-//             * Tests if .gap elements are loaded, if so clear's interval and calls callback.
-//             */
-//            function areGapsLoaded() {
-//                if ( $$('.gap').length > 0 ) {
-//                    clearInterval(gapTest);
-//                    callback();
-//                }
-//            }
-//
-//        }
-
-
-       /**
-        * Handles the instance in which the page is loaded with a hash.
-        * 
-        * Checks if the page is being loaded with a hash designation.
-        * If so, the method adds an event that scrolls to the appropriate
-        * hash location when the page has fully loaded.
-        */
-//        function checkForHash() {
-//            var hash = window.location.hash.replace('/','');
-//
-//            if ( hash === '' ) {
-//                return;
-//            }
-//
-//            window.addEvent('load', function() {
-//                scroll.toElement($$(hash).pick());
-//            });
-//
-//        }
-
-
-// This was a function that might help detect if the client's internet connection was too slow to load the logo video.
-//        function loadSpeedTest() {
-//
-//            console.log('loadSpeedTest: called at', new Date.getTime());
-//
-//            var slowLoad = window.setTimeout( function() {
-//                console.log( "the page is taking its sweet time loading" );
-//            }, 1 );
-//
-//             document.addEventListener( 'load', function() {
-//                window.clearTimeout( slowLoad );
-//           }, false );
-//       }
-
         return {
 
             // Public variables and functions
@@ -305,7 +252,6 @@ module.exports = (function () {
             load: function () {
                 setupLayout();
                 attach();
-//              checkForHash();
             }
 
         };

@@ -25,11 +25,6 @@ module.exports = (function() {
     		vDif = (p.getSize().y - e.getSize().y) / 2,
     		hDif = (p.getSize().x - e.getSize().x) / 2;
 
-//    	console.log(e.getSize());
-//    	console.log('p:', p.getSize().x, p.getSize().y);
-//    	console.log('e:', e.getSize().x, e.getSize().y);
-//    	console.log(vDif,hDif);
-
 		e.setStyle('margin-top', vDif);
 		e.setStyle('margin-left', hDif);
     });
@@ -67,10 +62,6 @@ module.exports = (function() {
 	    	hBigViz = el.left < view.left && el.right > view.right,
 	    	vViz = partial ? topViz || botViz || vBigViz : ( (topViz && botViz) || vBigViz ),
 	    	hViz = partial ? leftViz || rightViz || hBigViz : ( (leftViz && rightViz) || hBigViz );
-
-//	    console.log('view',view);
-//	   	console.log('el',el);
-//	   	console.log({topViz:topViz, botViz:botViz});
 
 	    if ( direction === 'both' ) {
 	    	return vViz && hViz;
