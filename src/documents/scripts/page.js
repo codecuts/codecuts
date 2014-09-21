@@ -85,8 +85,6 @@ module.exports = (function () {
             window.addEvent('resize', updateLayout.debounce(250));
             window.addEvent('scroll', menuFix);
             window.addEvent('load', preloader);
-            window.addEvent('onhashchange', function() { console.log('eyp'); });
-            window.addEvent('onunload', function() {console.log('erp'); });
 
         }
 
@@ -123,7 +121,6 @@ module.exports = (function () {
             var tests = $$('html').pick().getProperty('class').split(' ');
 
             if ( tests.contains('no-cssvhunit') ) {
-                console.log('fallbacks test: no-cssvhunit');
 
                 var el = $('content').getElements('#intro');
                 el.setStyles({
@@ -146,7 +143,6 @@ module.exports = (function () {
          * Event callback that handles the update of the layout when page is resized.
          */
         function updateLayout() {
-            console.log('updatelayout');
             $$('.gap').setStyle('height', 0.5625 * window.getSize().x);
             positionVideo();
         }
