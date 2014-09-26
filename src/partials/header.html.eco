@@ -10,6 +10,7 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<%- @getBlock("meta").toHTML() %>
     <%- @getBlock("styles").add(["/styles/style.css"]).toHTML() %>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,500,700,300italic,500italic,700italic' rel='stylesheet' type='text/css'>
     <script src="/vendor/mootools-core.js"></script>
     <script src="/vendor/mootools-more.js"></script>
     <!-- Polyfills for IE8 (& below!) -->
