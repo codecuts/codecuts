@@ -31,7 +31,7 @@ docpadConfig = {
 
 			events:
 				# Write after
-				# Used to minir our assets with grunt
+				# Used to minify our assets with grunt
 				writeAfter: (opts, next) ->
 					# Prepare
 					safeps = require('safeps')
@@ -39,12 +39,10 @@ docpadConfig = {
 					docpad = @docpad
 
 					# Perform the uglify js min task
-					uglify = ['grunt', 'uglify']
-					htmlmin = ['grunt', 'htmlmin']
+					minify = ['grunt', 'minify']
 
 					# Execute
-					safeps.spawn(uglify, {safe:false,output:true},next)
-					safeps.spawn(htmlmin, {safe:false,output:true},next)
+					safeps.spawn(minify, {safe:false,output:true},next)
 
 					# Chain
 					@

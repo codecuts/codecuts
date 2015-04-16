@@ -52,5 +52,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     grunt.registerTask('default', ['browserify','jshint']);
+    grunt.registerTask('minify', ['uglify', 'htmlmin']);
 };
 
